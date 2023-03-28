@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0328 반복문">
+    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="배열 push, pop 공부하기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day02/ArrayBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day02/ArrayBasic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
       <recent name="day02" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.ArrayQuizFood">
+  <component name="RunManager" selected="애플리케이션.ArrayQuizFood_T_me">
     <configuration name="ArrayCopy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day02.ArrayCopy" />
       <module name="java_basic" />
@@ -123,8 +122,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StdIO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day02.StdIO" />
+    <configuration name="ArrayQuizFood_T_me" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day02.ArrayQuizFood_T_me" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
@@ -138,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.ArrayQuizFood_T_me" />
         <item itemvalue="애플리케이션.ArrayQuizFood" />
         <item itemvalue="애플리케이션.ArrayPop" />
         <item itemvalue="애플리케이션.ArrayPush" />
         <item itemvalue="애플리케이션.ArrayCopy" />
-        <item itemvalue="애플리케이션.StdIO" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679881455594</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="배열 push, pop 공부하기">
+      <created>1679974870980</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679974870980</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,7 +198,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <MESSAGE value="배열 push, pop 공부하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="배열 push, pop 공부하기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
