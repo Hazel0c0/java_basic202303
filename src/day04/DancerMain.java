@@ -1,6 +1,7 @@
 package day04;
 
 public class DancerMain {
+/*
   public static void main(String[] args) {
 //    kim.dancerName="영수니";
 //    kim.crewName="몽충이";
@@ -23,4 +24,6 @@ public class DancerMain {
     jang.dance();
 
   }
+
+ */
 }

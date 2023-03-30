@@ -5,6 +5,10 @@ import java.util.Arrays;
 public class MethodBasicQuiz {
 
   static String[] foods = {"떡볶이", "치킨", "파스타"};
+  static String[] userNames = {"홍길동","김철수"};
+  // 이름이 바뀌면 사용할 수 없다 > 객체지향을 통해 모든 스트링 배열에서 사용 할 수 잇도록 make
+  // day04.array
+
   static String[] temp;
 
   private static void printFoods() {
