@@ -1,4 +1,4 @@
-package frult;
+package day04.frult;
 
 public class Apple {
   public Apple() {
