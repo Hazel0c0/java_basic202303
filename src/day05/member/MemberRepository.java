@@ -7,6 +7,8 @@ import day05.member.Member;
 public class MemberRepository {
   // 실제 데이터 처리는 여기서
 
+  public static final int NOT_FOUND = -1; //psf
+
   Member[] memberList;
 
   MemberRepository() {
@@ -94,5 +96,54 @@ public class MemberRepository {
     }
     return null;
   }
+
+  /**
+   * 비밀번호를 수정 하는 기능
+   *
+   * @param email       : 수정 대상의 이메일
+   * @param newPassword : 변경할 새로운 비밀번호
+   */
+  boolean changePassword(String email, String newPassword) {
+    int index = findIndexByEmail(email);  //인덱스 찾기
+
+    // 수정진행
+    if (index == NOT_FOUND) return false;
+
+    memberList[index].password = newPassword;
+    return true;
+    // 모든 배열의, 특정한 정보의 . 패스워드 <- 인덱스 필요!
+  }
+
+  /**
+   * 이메일을 통해 저장된 회원의 인덱스 값을 알아내는 메서드
+   *
+   * @param email - 탐색 대상의 이메일
+   * @return : 찾아낸 인덱스, 못찾으면 -1 리턴
+   */
+  int findIndexByEmail(String email) {
+    for (int i = 0; i < memberList.length; i++) {
+      if (memberList[i].email.equals(email))
+        return i;
+    }
+    return NOT_FOUND; // NOT_FOUND = -1 / 가시성
+  }
+
+
+  void removeMember(String email){
+    // 인덱스 찾기
+    int index = findIndexByEmail(email);
+    // 앞으로 땡기기
+    for (int i = index; i < memberList.length; i++) {
+      memberList[i]=memberList[i+1];
+    }
+    Member[] temp = new Member[memberList.length-1];
+
+    //배열 마지막칸 없애기
+    for (int i = 0; i < memberList.length; i++) {
+      temp[i]=memberList[i];
+    }
+    memberList=temp;
+  }
+
 }
 

@@ -49,8 +49,10 @@ public class MemberView {
           stop();
           break;
         case "4":
+          changePasswordViewProccess();
           break;
         case "5":
+          removeMemberViewProcess();
           break;
         case "6":
           String answer = input("# 정말로 종료합니까? [y/n] : ");
@@ -64,6 +66,14 @@ public class MemberView {
 
       }
     }
+  }
+
+  // 비밀번호 변경 입출력 처리
+  private void changePasswordViewProccess() {
+    String email = input("# 수정할 대상의 이메일 : ");
+    // 대상 탐색
+    Member foundMember = mr.findByEmail(email);
+
   }
 
   String input(String message) {
@@ -110,7 +120,7 @@ public class MemberView {
 
     // 실제 저장 명령
     Member newMember = new Member(email, password, name, mr.getLastMemberId() + 1, gender, age);
-    ;
+
     mr.addMember(newMember);
 
     System.out.println("\n# 회원 가입 성공!!");
@@ -118,7 +128,6 @@ public class MemberView {
   }
 
   // 회원 개별조희를 위한 입출력처리
-  /*
   void showDetailMember() {
     //이메일을 입력하세요!
     System.out.println("# 조회를 시작합니다~");
@@ -137,22 +146,29 @@ public class MemberView {
       System.out.println("# 조회된 회원이 없습니다.\n");
       System.out.print("# 이메일을 다시 입력해주세요 : ");
     }
-    */
-    void showDetailMember() {
-      // 이메일 입력하세요!
-      String inputEmail = input("# 조회를 시작합니다!\n# 이메일: ");
-      Member foundMember = mr.findByEmail(inputEmail);
-      // 찾은 회원의 정보 ~~~~~~
-      if (foundMember != null) {
-        System.out.println("\n========= 조회 결과 =========");
-        System.out.printf("# 이름: %s\n", foundMember.memberName);
-        System.out.printf("# 비밀번호: %s\n", foundMember.password);
-        System.out.printf("# 성별: %s\n", (foundMember.gender == Gender.MALE) ? "남성" : "여성");
-        System.out.printf("# 나이: %d세\n", foundMember.age);
-      } else {
-        System.out.println("\n# 조회된 회원이 없습니다.");
+  }
+
+  // 멤버 삭제
+  void removeMemberViewProcess() {
+    while (true) {
+      String email = input("삭제하실 회원의 이메일을 입력해주세요");
+      Member findMember = mr.findByEmail(email);
+      if (findMember != null) {
+        System.out.println("이메일이 없습니다. 다시 입력해주세요");
+        continue;
       }
-      stop();
+      String answer =  input("정말 삭제하시겠습니까? [ Y / N ] ");
+      switch (answer) {
+        case "Y":
+          mr.removeMember(email);
+          System.out.println("회원을 삭제했습니다");
+          break;
+        case "N":
+          System.out.println("삭제를 취소합니다");
+          break;
+      }
+
     }
   }
+
 }

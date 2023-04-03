@@ -16,5 +16,15 @@ public class Test {
     boolean flag2 = mr.isDuplicateEmail("abcc@def.com");
 //    System.out.println("flag = " + flag);
 //    System.out.println("flag2 = " + flag2);
+    
+    String targetEmail="abc@def.com";
+    boolean updateFlag = mr.changePassword(targetEmail,"9999");
+
+    if (updateFlag) {
+      String updateMember = mr.findByEmail(targetEmail).inform();
+      System.out.println("updateMember = " + updateMember);
+    } else {
+      System.out.println("이메일이 잘못됨!");
+    }
   }
 }
