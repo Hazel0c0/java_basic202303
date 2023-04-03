@@ -22,7 +22,7 @@ public class MemberView {
     System.out.println("* 2. 개별회원 정보 조회하기");
     System.out.println("* 3. 전체회원 정보 조회하기");
     System.out.println("* 4. 회원 정보 수정하기");
-    System.out.println("* 5. 회원 정보 삭제하기");
+    if (mr.isEmpty()) System.out.println("* 5. 회원 정보 삭제하기");
     System.out.println("* 6. 프로그램 종료");
     System.out.println("* ========================");
   }
@@ -153,20 +153,22 @@ public class MemberView {
     while (true) {
       String email = input("삭제하실 회원의 이메일을 입력해주세요");
       Member findMember = mr.findByEmail(email);
-      if (findMember != null) {
-        System.out.println("이메일이 없습니다. 다시 입력해주세요");
-        continue;
+      if (findMember != null) {  //  존재하면
+        String answer = input(String.format
+            ("%s 님의 정보를 정말 삭제하시겠습니까? [ Y / N ] "
+                ,findMember.memberName));
+        switch (answer) {
+          case "Y":
+            mr.removeMember(email);
+            System.out.println("회원을 삭제했습니다");
+            break;
+          case "N":
+            System.out.println("삭제를 취소합니다");
+            break;
+        }
       }
-      String answer =  input("정말 삭제하시겠습니까? [ Y / N ] ");
-      switch (answer) {
-        case "Y":
-          mr.removeMember(email);
-          System.out.println("회원을 삭제했습니다");
-          break;
-        case "N":
-          System.out.println("삭제를 취소합니다");
-          break;
-      }
+      System.out.println("이메일이 없습니다. 다시 입력해주세요");
+      continue;
 
     }
   }

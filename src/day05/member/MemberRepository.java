@@ -136,14 +136,16 @@ public class MemberRepository {
     for (int i = index; i < memberList.length; i++) {
       memberList[i]=memberList[i+1];
     }
-    Member[] temp = new Member[memberList.length-1];
-
     //배열 마지막칸 없애기
+    Member[] temp = new Member[memberList.length-1];
     for (int i = 0; i < memberList.length; i++) {
       temp[i]=memberList[i];
     }
     memberList=temp;
   }
+    boolean isEmpty(){
+      return memberList != null;
+    }
 
 }
 
