@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="오전 수업 끝 0331">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/member/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/member/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/member/MemberView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/member/MemberView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/member/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/member/Test.java" afterDir="false" />
-    </list>
+    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0403 회원이 없을 때 5번 메뉴 비활성화 시키기" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680240847183</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="0403 회원이 없을 때 5번 메뉴 비활성화 시키기">
+      <created>1680503443230</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680503443230</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,7 +258,8 @@
     <MESSAGE value="오전 수업 끝" />
     <MESSAGE value="오전 수업 끝 ( String List 마저 만들기)" />
     <MESSAGE value="오전 수업 끝 0331" />
-    <option name="LAST_COMMIT_MESSAGE" value="오전 수업 끝 0331" />
+    <MESSAGE value="0403 회원이 없을 때 5번 메뉴 비활성화 시키기" />
+    <option name="LAST_COMMIT_MESSAGE" value="0403 회원이 없을 때 5번 메뉴 비활성화 시키기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
