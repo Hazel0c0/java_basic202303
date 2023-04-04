@@ -10,7 +10,7 @@ public class Lotto {
     // 로또 만드는건 외부에서 건들면  X - private(클래스 내에서만 호출 할 수 있게)
     int i = 0;
     while (i < lotto.length) {
-      int random = (int) ((Math.random() * 10) + 1);
+      int random = (int) ((Math.random() * 49) + 1);
       if (!(isDuplicate(lotto, random))) {
         lotto[i] = random;
         i++;

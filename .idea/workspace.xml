@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0404 5교시 로또번호 다시 풀어보기">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day07/lotto/Lotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Lotto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day07/util/LottoSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
