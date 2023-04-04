@@ -1,4 +1,4 @@
-package day07.util;
+package day07.lotto;
 
 import java.util.Arrays;
 
@@ -16,7 +16,7 @@ public class LottoSimulator {
       myNumber[i] = Integer.parseInt(input(i + 1 + "번째 번호 >> "));
     }
     end:while (true) {
-    int[] lotto=information();
+    information();
     input("로또번호 확인");
       for (int i = 0; i < 6; i++) {
         if (myNumber[i] != lotto[i]) {

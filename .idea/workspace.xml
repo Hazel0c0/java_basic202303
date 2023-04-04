@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0403 수업 끝">
+    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0404 5교시 로또번호 다시 풀어보기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day04/PackagePractice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day04/PackagePractice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/juice/Apple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Lotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Lotto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day07/util/LottoSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
       <recent name="day02" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.day07.protec.pac1.Main">
+  <component name="RunManager" selected="애플리케이션.Main">
     <configuration name="GisaFirst" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day07.qulz.GisaFirst" />
       <module name="java_basic" />
@@ -94,12 +95,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day05.member.Test" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day07.lotto.Main" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day05.member.*" />
+          <option name="PATTERN" value="day07.lotto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="day05.member.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day05.member.Main" />
+    <configuration name="Utility" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day07.util.Utility" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day05.member.*" />
+          <option name="PATTERN" value="day07.lotto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.Main" />
+        <item itemvalue="애플리케이션.Utility" />
         <item itemvalue="애플리케이션.day07.protec.pac1.Main" />
         <item itemvalue="애플리케이션.GisaFirst" />
         <item itemvalue="애플리케이션.day07.inherit.Main" />
-        <item itemvalue="애플리케이션.Test" />
-        <item itemvalue="애플리케이션.day05.member.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +249,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680511860972</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="0404 5교시 스태틱 - 스캐너 부분 공부하기">
+      <created>1680589038690</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680589038690</updated>
+    </task>
+    <task id="LOCAL-00014" summary="0404 5교시 로또번호 다시 풀어보기">
+      <created>1680595583409</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680595583409</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,7 +290,9 @@
     <MESSAGE value="오전 수업 끝 0331" />
     <MESSAGE value="0403 회원이 없을 때 5번 메뉴 비활성화 시키기" />
     <MESSAGE value="0403 수업 끝" />
-    <option name="LAST_COMMIT_MESSAGE" value="0403 수업 끝" />
+    <MESSAGE value="0404 5교시 스태틱 - 스캐너 부분 공부하기" />
+    <MESSAGE value="0404 5교시 로또번호 다시 풀어보기" />
+    <option name="LAST_COMMIT_MESSAGE" value="0404 5교시 로또번호 다시 풀어보기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
