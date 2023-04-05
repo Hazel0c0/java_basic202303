@@ -70,7 +70,7 @@ public class StringList {
   }
 
   // 인덱스 탐색
-  public  int searchIdx(String name) {
+  public  int indexOf(String name) {
     for (int i = 0; i < sArr.length; i++) {
       if (name.equals(sArr[i])) {
         return i;
@@ -81,7 +81,7 @@ public class StringList {
 
   // 자료 유무 확인
   public  boolean searchName(String name){
-    int idx=searchIdx(name);
+    int idx=indexOf(name);
     return idx != -1;
   }
 

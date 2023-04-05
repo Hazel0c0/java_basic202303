@@ -2,6 +2,8 @@ package day08.poly.book;
 
 import day04.array.StringList;
 
+import static day08.poly.book.RentStatus.*;
+
 // 도서관리 시스템 데이터 처리
 public class LibraryRepository {
 
@@ -12,7 +14,12 @@ public class LibraryRepository {
   private static Book[] bookList;
 
   static {
-    bookList = new Book[]{new CookBook("맘스터치", "햄벙", "패스트", true), new CartoonBook("마나책", "마나 ", "노농", 15), new CookBook("백족원의 집밥", "백종원", "tvN", false), new CartoonBook("자바공부중", "김자바", "코딩", 19), new CartoonBook("나랑노라", "왜안노라", "노라준다매", 7), new CookBook("마싯는 마라탕 만들기", "햇매운맛", "샹궈", true)};
+    bookList = new Book[]{new CookBook("맘스터치", "햄벙", "패스트", true)
+        , new CartoonBook("마나책", "마나 ", "노농", 15)
+        , new CookBook("백족원의 집밥", "백종원", "tvN", false)
+        , new CartoonBook("자바공부중", "김자바", "코딩", 19)
+        , new CartoonBook("나랑노라", "왜안노라", "노라준다매", 7)
+        , new CookBook("마싯는 마라탕 만들기", "햇매운맛", "샹궈", true)};
   }
 
   // 유저를 등록하는 기능
@@ -54,4 +61,31 @@ public class LibraryRepository {
     }
     return list.getsArr();
   }
+
+  public RentStatus findRantalBook(int rentalNum) {
+
+    Book findRantalBook = bookList[rentalNum - 1];
+
+    // 요리책인지 만화책인지 ck
+    if (findRantalBook instanceof CookBook) {
+
+      // 쿠폰 유무 ck
+      boolean coupon = ((CookBook) findRantalBook).isCoupon();
+      if (coupon) {
+        //에러 해결하기
+//        bookUser.setCouponCount(bookUser.getCouponCount()+1); // 쿠폰 하나 증가된 값(get)을 set해준다
+        return RENT_SUCCESS_WITH_COUPON;
+      } else {
+        return RENT_SUCCESS;
+      }
+    } else if (findRantalBook instanceof CartoonBook) {
+      // 나이확인
+      // 빌릴수 있었음녀 석세스 못빌리면 페일 리턴 (열거형)
+      return RENT_SUCCESS;
+    }
+
+    return RENT_FAIL;
+  }
+
 }
+

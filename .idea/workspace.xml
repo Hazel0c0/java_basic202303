@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="book 오류 ck">
+    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="대여하기 me 완성. 대여상태, 대여일수.. 설정 해보기">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day04/array/StringList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day04/array/StringList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/LibraryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/LibraryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day08/poly/book/LibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/LibraryView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -310,7 +314,8 @@
     <MESSAGE value="0404 5교시 로또번호 다시 풀어보기" />
     <MESSAGE value="0405 day07 스태틱_ 보기" />
     <MESSAGE value="(int) (Math.random() * 40 + 10);" />
-    <option name="LAST_COMMIT_MESSAGE" value="(int) (Math.random() * 40 + 10);" />
+    <MESSAGE value="대여하기 me 완성. 대여상태, 대여일수.. 설정 해보기" />
+    <option name="LAST_COMMIT_MESSAGE" value="대여하기 me 완성. 대여상태, 대여일수.. 설정 해보기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

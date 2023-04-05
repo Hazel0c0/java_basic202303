@@ -1,9 +1,6 @@
 package day08.poly.book;
 
 import day05.member.Gender;
-import day07.util.Utility;
-
-import java.util.Scanner;
 
 import static day05.member.Gender.*;
 import static day07.util.Utility.*;
@@ -58,7 +55,7 @@ public class LibraryView {
   // 화면 처리
   public static void start() {
 
-    makeNewBookUser();
+//    makeNewBookUser();
 
     // 메인 메뉴 띄우기
     while (true) {
@@ -69,10 +66,10 @@ public class LibraryView {
 
   // 메뉴 번호를 입력받고 분기를 나눠주는 메서드
   private static void selectMenu() {
-    String menuNum = input("- 메뉴 번호 : ");
+    int menuNum = Integer.parseInt(input("- 메뉴 번호 : "));
 
     switch (menuNum) {
-      case "1":
+      case 1:
         // 마이페이지: 가입한 회원정보 출력
         // 정보내놔
         BookUser user = repository.findBookUser();
@@ -82,14 +79,11 @@ public class LibraryView {
         System.out.println("# 성별: " + user.getGenderToString());
         System.out.println("# 쿠폰개수: " + user.getCouponCount());
         break;
-      case "2":
-        String[] infoList = repository.getBookInfoList();
-        System.out.println("\n========= 모든 도서 정보 -------------");
-        for (String info : infoList) {
-          System.out.println(info);
-        }
+      case 2:
+        System.out.println("\n========= 모든 도서 정보 =============");
+        allBookInfo(menuNum);
         break;
-      case "3":
+      case 3:
         // 사용자에게 검색어 입력 받기
         String keyword = input("# 검색어: ");
 
@@ -99,16 +93,52 @@ public class LibraryView {
           System.out.println(info);
         }
         break;
-      case "4":
+      case 4:
         break;
-      case "5":
+      case 5:
+        // 대여가능한 책의 목록을 번호와 함께 출력
+        System.out.println("========== 대여 도서 목록 =============");
+        allBookInfo(menuNum);
+
+        int rentalNum = Integer.parseInt(input("\n# 대여할 도서 번호 입력 : "));
+        RentStatus rentStatus = repository.findRantalBook(rentalNum);// 찾은 책
+        retalBook(rentStatus);
         break;
-      case "9":
+      case 9:
         System.out.println("# 프로그램을 종료합니다.");
         System.exit(0);
         break;
       default:
         System.out.println("\n# 메뉴번호를 똑바로 입력하라고~~~");
+    }
+  }
+
+  private static void retalBook(RentStatus rentStatus) {
+    switch (rentStatus) {
+      case RENT_SUCCESS:
+        System.out.print("성공적으로 대여되었습니다. ");
+        break;
+      case RENT_FAIL:
+        System.out.println("대여 실패..ㅜㅜ 그 책이 없어요");
+        break;
+      case RENT_SUCCESS_WITH_COUPON:
+        System.out.println("대여 성공 ~!~! 인요리학원 쿠폰이 발급되었으니 마이페이지를 확하세요");
+        break;
+    }
+  }
+
+  private static void allBookInfo(int menuNum) {
+    String[] infoList = repository.getBookInfoList();
+    int bookNum = 1;
+    for (String info : infoList) {
+      switch (menuNum) {
+        case 2:
+          System.out.println(info);
+          break;
+        case 5:
+          System.out.printf("%d번째 도서. %s\n", bookNum++, info);
+          break;
+      }
     }
   }
 
