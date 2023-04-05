@@ -94,7 +94,10 @@ public class LibraryView {
         String keyword = input("# 검색어: ");
 
         // 저장소에 해당 검색어를 주면서 검색에 걸린 책 정보를 내노라고
-        String [] bookInfoList = repository.searchBookInfoList();
+        String[] bookInfoList = repository.searchBookInfoList(keyword);
+        for (String info : bookInfoList) {
+          System.out.println(info);
+        }
         break;
       case "4":
         break;
