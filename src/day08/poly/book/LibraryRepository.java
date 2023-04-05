@@ -1,25 +1,57 @@
 package day08.poly.book;
 
+import day04.array.StringList;
+
 // 도서관리 시스템 데이터 처리
 public class LibraryRepository {
 
-  // 회원 1명이라서
+  // 회원 1명
   private static BookUser bookUser;
 
   // 도서들의 정보
   private static Book[] bookList;
 
-  //유저를 등록하는 기능
+  static {
+    bookList = new Book[]{new CookBook("맘스터치", "햄벙", "패스트", true), new CartoonBook("마나책", "마나 ", "노농", 15), new CookBook("백족원의 집밥", "백종원", "tvN", false), new CartoonBook("자바공부중", "김자바", "코딩", 19), new CartoonBook("나랑노라", "왜안노라", "노라준다매", 7), new CookBook("마싯는 마라탕 만들기", "햇매운맛", "샹궈", true)};
+  }
+
+  // 유저를 등록하는 기능
   public void register(BookUser userInfo) {
     bookUser = userInfo;
   }
 
   // 마이페이지 기능
-  /*
-    여기에 있는 bookUser 정보 리턴
-   */
+    /*
+        여기에 있는 bookUser 정보 리턴
+     */
   BookUser findBookUser() {
-    return bookUser; // 한명이라서 바로 리턴 ( 여러명이면 찾는 기능 추가 필요 )
+    return bookUser;
   }
 
+  // 모든 책의 정보를 알려주는 메서드
+  public String[] getBookInfoList() {
+    String[] infoList = new String[bookList.length];
+    for (int i = 0; i < infoList.length; i++) {
+      infoList[i] = bookList[i].info();
+    }
+    return infoList;
+  }
+
+  // 검색어를 받으면 해당검색어를 포함하는 제목을 가진
+  // 책 정보들을 반환
+  public String[] searchBookInfoList(String keyword) {
+//    String[] infoList={};
+// 전에만든 배열 메서드 재활용 --
+    StringList list = new StringList();
+    // bookList를 뒤져야함
+    for (Book book : bookList) {
+      String title = book.getTitle(); // 책 제목
+      if (title.contains(keyword)) {
+        // 검색어에 걸린 책 의 정보문자열
+        String info = book.info();
+        list.push(info);
+      }
+    }
+    return list.getsArr();
+  }
 }

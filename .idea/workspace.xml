@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="(int) (Math.random() * 40 + 10);">
+    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="book 오류 ck">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_21_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_21_________Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_22_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_22_________Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/poly/car/CarShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/car/CarShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/poly/car/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/car/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/poly/car/Mustang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/car/Mustang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day04/array/StringList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day04/array/StringList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/BookMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/BookUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/BookUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/CartoonBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/CartoonBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/CookBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/CookBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/LibraryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/LibraryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/LibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/LibraryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/Run.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +74,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/java_basic/src/day07",
+    "last_opened_file_path": "D:/java_basic/src/day08/poly/book_T",
     "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -79,6 +86,7 @@
       <recent name="day05.member" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java_basic\src\day08\poly\book_T" />
       <recent name="D:\java_basic\src\day07" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -127,12 +135,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="day07.protec.pac1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day07.protec.pac1.Main" />
+    <configuration name="day08.poly.book_T.Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day08.poly.book_T.Run" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day07.protec.pac1.*" />
+          <option name="PATTERN" value="day08.poly.book_T.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,10 +164,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="애플리케이션.Run" />
+        <item itemvalue="애플리케이션.day08.poly.book_T.Run" />
         <item itemvalue="애플리케이션.day08.poly.car.Main" />
         <item itemvalue="애플리케이션.Main" />
         <item itemvalue="애플리케이션.Utility" />
-        <item itemvalue="애플리케이션.day07.protec.pac1.Main" />
       </list>
     </recent_temporary>
   </component>

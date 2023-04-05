@@ -6,14 +6,14 @@ public class StringList {
   //스트링배열을 제어하는 설계도
 
   //필드
-  String[] sArr;
+  private String[] sArr;
 
   // 생성자
   public StringList() {
     sArr = new String[0]; // 빈 스트링 배열
   }
 
-  StringList(String... initData) {
+  public StringList(String... initData) {
     sArr = new String[initData.length];
     for (int i = 0; i < sArr.length; i++) {
       sArr[i] = initData[i];
@@ -21,12 +21,12 @@ public class StringList {
   }
 
   // 메서드
-  int size() {
+  public int size() {
     // 배열에 저장된 데이터 수를 알려주는 기능
     return sArr.length;
   }
 
-  void push(String newData) {
+  public void push(String newData) {
     // 배열에 맨 끝에 데이터를 추가하는 기능
     String[] temp = new String[sArr.length + 1];
     for (int i = 0; i < sArr.length; i++) {
@@ -36,7 +36,7 @@ public class StringList {
     sArr = temp;  //temp=null 필요없음.  temp 지역변수라서!!
   }
 
-  String pop() {
+  public String pop() {
     // 배열 맨 끝 데이터 삭제하는 기능
     String deleteTarget = sArr[sArr.length - 1]; // 지우기 전에 찾아놓고
     //지우고
@@ -54,7 +54,7 @@ public class StringList {
   }
 
   //배열이 텅텅 비었는지
-  boolean isEmpty() {
+  public boolean isEmpty() {
 //    if (sArr.length==0) {
 //      return true;
 //    } else {
@@ -65,12 +65,12 @@ public class StringList {
   }
 
   // 배열 데이터 전체삭제
-  void clear() {
+  public  void clear() {
     sArr = new String[0];
   }
 
   // 인덱스 탐색
-  int searchIdx(String name) {
+  public  int searchIdx(String name) {
     for (int i = 0; i < sArr.length; i++) {
       if (name.equals(sArr[i])) {
         return i;
@@ -80,7 +80,7 @@ public class StringList {
   }
 
   // 자료 유무 확인
-  boolean searchName(String name){
+  public  boolean searchName(String name){
     int idx=searchIdx(name);
     return idx != -1;
   }
@@ -89,4 +89,10 @@ public class StringList {
 
 
   // 중간 삽입
+
+
+  //원본 배열 주세요 ( 반복문 돌리려고)
+  public String[] getsArr() {
+    return sArr;
+  }
 }
