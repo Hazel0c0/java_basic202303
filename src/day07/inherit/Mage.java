@@ -1,7 +1,5 @@
 package day07.inherit;
 
-import day07.util.Utility;
-
 import static day07.util.Utility.*;
 
 public class Mage extends Player {
@@ -20,8 +18,8 @@ public class Mage extends Player {
     System.out.printf("# %s님 썬더볼트 시전!\n",nickName);
     makeLine();
     for (Player target : targets) {
-      int att = (int) (Math.random() * 40 + 10);
-      System.out.println(target.nickName + "님이 " + att + "의 피해를 입었습니다.(남은 체력: " + (target.hp - att) + ")");
+      int damage = (int) (Math.random() * 40 + 10);
+      System.out.println(target.nickName + "님이 " + damage + "의 피해를 입었습니다.(남은 체력: " + (target.hp - damage) + ")");
     }
   }
 
