@@ -101,6 +101,8 @@ public class LibraryView {
         break;
       case "4":
         break;
+      case "5":
+        break;
       case "9":
         System.out.println("# 프로그램을 종료합니다.");
         System.exit(0);
@@ -115,9 +117,9 @@ public class LibraryView {
     System.out.println("\n============ 도서 메뉴 ==============");
     System.out.println("# 1. 마이페이지");
     System.out.println("# 2. 도서 전체 조회");
-    System.out.println("# 3. 도서 검색");
-    System.out.println("# 4. 도서 대여하기");
+    System.out.println("# 3. 도서 검색 (책제목)");
+    System.out.println("# 4. 도서 검색 (저자명)");
+    System.out.println("# 5. 도서 대여하기"); // 만화책 , 요리책 구분해야함
     System.out.println("# 9. 프로그램 종료하기");
   }
-
 }
