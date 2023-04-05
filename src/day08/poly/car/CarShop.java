@@ -34,9 +34,9 @@ public class CarShop {
     if (money == 6000) {
       return new Mustang();
     } else if (money == 5000) {
-      return new Mustang();
+      return new Stinger();
     } else if (money == 3000) {
-      return new Mustang();
+      return new Tucson();
     } else {
       return null;
     }

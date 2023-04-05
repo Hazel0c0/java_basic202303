@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="(int) (Math.random() * 40 + 10);">
-      <change beforePath="$PROJECT_DIR$/src/day07/inherit/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/inherit/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/car/CarShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/car/CarShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/car/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/car/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/poly/car/Mustang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/car/Mustang.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +71,7 @@
     "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java"
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -82,13 +87,13 @@
       <recent name="day02" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.Main">
-    <configuration name="GisaFirst" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day07.qulz.GisaFirst" />
+  <component name="RunManager" selected="애플리케이션.Run">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day07.lotto.Main" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day07.qulz.*" />
+          <option name="PATTERN" value="day07.lotto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,12 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day07.lotto.Main" />
+    <configuration name="Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day08.poly.book.Run" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day07.lotto.*" />
+          <option name="PATTERN" value="day08.poly.book.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,19 +127,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="day07.inherit.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day07.inherit.Main" />
-      <module name="java_basic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="day07.inherit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="day07.protec.pac1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day07.protec.pac1.Main" />
       <module name="java_basic" />
@@ -148,13 +140,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="day08.poly.car.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day08.poly.car.Main" />
+      <module name="java_basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day08.poly.car.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.Run" />
+        <item itemvalue="애플리케이션.day08.poly.car.Main" />
         <item itemvalue="애플리케이션.Main" />
         <item itemvalue="애플리케이션.Utility" />
         <item itemvalue="애플리케이션.day07.protec.pac1.Main" />
-        <item itemvalue="애플리케이션.GisaFirst" />
-        <item itemvalue="애플리케이션.day07.inherit.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -324,6 +329,10 @@
           <line>11</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

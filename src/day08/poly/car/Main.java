@@ -17,6 +17,19 @@ public class Main {
 
     makeLine();
 
+    /*
+    Car mustang = new Mustang(); // powerSound 호출하려면 다운캐스팅 필요
+    if ( mustang instanceof  Mustang){
+      ((Mustang) mustang).powerSound();
+    }
+     */
+
+    Car car = shop.exportCar(5000);
+    System.out.println(car instanceof Stinger);
+    System.out.println(car instanceof Mustang);
+    System.out.println(car instanceof Tucson);
+//    mustang.accelerate();
+//    mustang.powerSound();
 
   }
 }
