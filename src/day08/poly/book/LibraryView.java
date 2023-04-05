@@ -21,9 +21,12 @@ public class LibraryView {
   // 회원정보 입력처리
   private static void makeNewBookUser() {
     System.out.println("\n# 회원 정보를 입력해주세요.");
-    String name = input("# 이름: ");
-    int age = Integer.parseInt(input("# 나이: "));
-    Gender gender = inputGender();
+//    String name = input("# 이름: ");
+    String name = "찌오니";
+//    int age = Integer.parseInt(input("# 나이: "));
+    int age = 27;
+//    Gender gender = inputGender();
+    Gender gender = FEMALE;
 
     // 입력받은 데이터 객체로 포장
     BookUser userInfo = new BookUser();

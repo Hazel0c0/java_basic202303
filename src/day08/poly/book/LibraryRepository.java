@@ -24,6 +24,7 @@ public class LibraryRepository {
 
   // 유저를 등록하는 기능
   public void register(BookUser userInfo) {
+    // 유저정보를 받으면 유저 객체에 저장하는 기능
     bookUser = userInfo;
   }
 
@@ -32,6 +33,7 @@ public class LibraryRepository {
         여기에 있는 bookUser 정보 리턴
      */
   BookUser findBookUser() {
+    // ^ 호출하면 유저정보 리턴해주는 기능
     return bookUser;
   }
 
@@ -72,8 +74,7 @@ public class LibraryRepository {
       // 쿠폰 유무 ck
       boolean coupon = ((CookBook) findRantalBook).isCoupon();
       if (coupon) {
-        //에러 해결하기
-//        bookUser.setCouponCount(bookUser.getCouponCount()+1); // 쿠폰 하나 증가된 값(get)을 set해준다
+        bookUser.setCouponCount(bookUser.getCouponCount()+1); // 쿠폰 하나 증가된 값(get)을 set해준다
         return RENT_SUCCESS_WITH_COUPON;
       } else {
         return RENT_SUCCESS;
