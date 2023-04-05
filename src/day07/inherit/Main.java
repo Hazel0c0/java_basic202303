@@ -1,7 +1,5 @@
 package day07.inherit;
 
-import static day07.util.Utility.makeLine;
-
 public class Main {
 
     public static void main(String[] args) {
