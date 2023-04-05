@@ -8,8 +8,15 @@ public class Main {
     Hunter h = new Hunter("욕설왕퍼킹");
 //    Player p = new Player();
 
-    w.showStatus();
-    m.showStatus();
-    h.showStatus();
+//    w.showStatus();
+//    m.showStatus();
+//    h.showStatus();
+
+    Player[] players={
+        w,m,h,
+        new Warrior("요리왕쿠킹"),
+        new Warrior("곤듀")
+    };
+    m.thunderBolt(w);
   }
 }

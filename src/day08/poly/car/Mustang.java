@@ -1,0 +1,7 @@
+package day08.poly.car;
+
+public class Mustang extends Car {
+  void accelerate(){
+    System.out.println("  머스탱이 달립니다");
+  }
+}

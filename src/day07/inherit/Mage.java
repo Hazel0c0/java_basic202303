@@ -15,7 +15,7 @@ public class Mage extends Player {
   }
 
   // 썬더볼트
-  public void thunderBolt() {
+  public void thunderBolt(Player...) {
     System.out.println("thunderBolt 시전합니다.");
   }
 }
