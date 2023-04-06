@@ -14,7 +14,8 @@ public class LibraryRepository {
   private static Book[] bookList;
 
   static {
-    bookList = new Book[]{new CookBook("맘스터치", "햄벙", "패스트", true)
+    bookList = new Book[]{
+        new CookBook("맘스터치", "햄벙", "패스트", true)
         , new CartoonBook("마나책", "마나 ", "노농", 15)
         , new CookBook("백족원의 집밥", "백종원", "tvN", false)
         , new CartoonBook("자바공부중", "김자바", "코딩", 19)

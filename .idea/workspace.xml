@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="밑에꺼 수정">
+    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0405 수업끝">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_21_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_21_________Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_22_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_22_________Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day04/Singer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day04/array/StringList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day04/array/StringList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day08/poly/book/LibraryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/LibraryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/poly/book/LibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/poly/book/LibraryView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,6 +56,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2NZkIEUMREHFNJZC5zRF7HRA3vE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -76,6 +80,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="day09" />
       <recent name="day05.member" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -83,18 +88,32 @@
       <recent name="D:\java_basic\src\day07" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="day04.array" />
       <recent name="day07.inherit" />
       <recent name="day03" />
       <recent name="day02" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.Run">
+  <component name="RunManager" selected="애플리케이션.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day07.lotto.Main" />
+      <option name="MAIN_CLASS_NAME" value="day08.poly.soon.Main" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day07.lotto.*" />
+          <option name="PATTERN" value="day08.poly.soon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MusicVIew" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day09.jwCompany.MusicVIew" />
+      <module name="java_basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day09.jwCompany.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,12 +134,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Utility" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day07.util.Utility" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day09.jwCompany.Test" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day07.lotto.*" />
+          <option name="PATTERN" value="day09.jwCompany.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,25 +147,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="day08.poly.book_T.Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day08.poly.book_T.Run" />
+    <configuration name="day08.poly.soon.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day08.poly.soon.Test" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day08.poly.book_T.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="day08.poly.car.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day08.poly.car.Main" />
-      <module name="java_basic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="day08.poly.car.*" />
+          <option name="PATTERN" value="day08.poly.soon.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.Run" />
-        <item itemvalue="애플리케이션.day08.poly.book_T.Run" />
-        <item itemvalue="애플리케이션.day08.poly.car.Main" />
         <item itemvalue="애플리케이션.Main" />
-        <item itemvalue="애플리케이션.Utility" />
+        <item itemvalue="애플리케이션.day08.poly.soon.Test" />
+        <item itemvalue="애플리케이션.Test" />
+        <item itemvalue="애플리케이션.MusicVIew" />
+        <item itemvalue="애플리케이션.Run" />
       </list>
     </recent_temporary>
   </component>

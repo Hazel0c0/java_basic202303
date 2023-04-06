@@ -1,16 +1,16 @@
 package day04.array;
-
 import java.util.Arrays;
 
+// 스트링배열을 제어하는 설계도
 public class StringList {
-  //스트링배열을 제어하는 설계도
 
-  //필드
-  private String[] sArr;
+  // 필드
+  String[] sArr;
 
   // 생성자
   public StringList() {
-    sArr = new String[0]; // 빈 스트링 배열
+//        System.out.println("StringList 생성자 끌려옴");
+    sArr = new String[0];
   }
 
   public StringList(String... initData) {
@@ -20,76 +20,93 @@ public class StringList {
     }
   }
 
+
   // 메서드
+  // 배열에 저장된 데이터 수를 알려주는 기능
   public int size() {
-    // 배열에 저장된 데이터 수를 알려주는 기능
     return sArr.length;
   }
-
+  // 배열에 맨 끝에 데이터를 추가하는 기능
   public void push(String newData) {
-    // 배열에 맨 끝에 데이터를 추가하는 기능
     String[] temp = new String[sArr.length + 1];
     for (int i = 0; i < sArr.length; i++) {
       temp[i] = sArr[i];
     }
     temp[temp.length - 1] = newData;
-    sArr = temp;  //temp=null 필요없음.  temp 지역변수라서!!
+    sArr = temp;
   }
-
+  // 배열 맨 끝 데이터 삭제하는 기능
   public String pop() {
-    // 배열 맨 끝 데이터 삭제하는 기능
-    String deleteTarget = sArr[sArr.length - 1]; // 지우기 전에 찾아놓고
-    //지우고
+    String deleteTarget = sArr[sArr.length - 1];
     String[] temp = new String[sArr.length - 1];
     for (int i = 0; i < temp.length; i++) {
       temp[i] = sArr[i];
     }
     sArr = temp;
-    return deleteTarget; //지운데이터 리턴
+    return deleteTarget;
   }
 
+  // 배열 내부데이터 출력
   public String toString() {
-    // ~필기~ 출력
     return Arrays.toString(sArr);
   }
 
-  //배열이 텅텅 비었는지
+  // 배열이 텅텅비었는지 확인
   public boolean isEmpty() {
-//    if (sArr.length==0) {
-//      return true;
-//    } else {
-//      return  false;
-//    }
-    // 간단화
     return sArr.length == 0;
   }
-
   // 배열 데이터 전체삭제
-  public  void clear() {
+  public void clear() {
     sArr = new String[0];
   }
 
-  // 인덱스 탐색
-  public  int indexOf(String name) {
+  // 인덱스 탐색 (indexOf)
+  public int indexOf(String target) {
     for (int i = 0; i < sArr.length; i++) {
-      if (name.equals(sArr[i])) {
+      if (target.equals(sArr[i])) {
         return i;
       }
     }
     return -1;
   }
 
-  // 자료 유무 확인
-  public  boolean searchName(String name){
-    int idx=indexOf(name);
-    return idx != -1;
+  // 자료 유무 확인 (includes)
+  public boolean includes(String target) {
+    return indexOf(target) != -1;
   }
 
-  // 중간 삭제
+  // 중간 삭제 (remove) : 인덱스로 삭제
+  public String remove(int index) {
+    if (index < 0 || index > sArr.length - 1) return null;
 
+    String targetData = sArr[index];
+    for (int i = index; i < sArr.length - 1; i++) {
+      sArr[i] = sArr[i + 1];
+    }
+    pop();
+    return targetData;
+  }
+  // 중간 삭제 (remove) : 값으로 삭제
+  String remove(String target) {
+    return remove(indexOf(target));
+  }
 
-  // 중간 삽입
+  // 중간 삽입 (insert)
+  public void insert(int index, String newData) {
 
+    if (index < 0 || index > sArr.length - 1) return;
+    if (index == sArr.length - 1) push(newData);
+
+    String[] temp = new String[sArr.length + 1];
+    for (int i = 0; i < sArr.length; i++) {
+      temp[i] = sArr[i];
+    }
+    for (int i = temp.length - 1; i > index; i--) {
+      temp[i] = temp[i-1];
+    }
+    temp[index] = newData;
+    sArr = temp;
+  }
 
   //원본 배열 주세요 ( 반복문 돌리려고)
   public String[] getsArr() {
