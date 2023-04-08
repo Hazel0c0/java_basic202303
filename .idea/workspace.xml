@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0406 오후 수업 끝( 오전 수업 내용 가져와야함, 오후는 문제풀기+풀이)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day10/collection/list/ListSearchQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/list/ListSearchQuiz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,9 +90,22 @@
       <recent name="day02" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.Main">
+  <component name="RunManager" selected="애플리케이션.ListSearchQuiz">
     <configuration name="LIstExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day10.collection.list.LIstExample" />
+      <module name="java_basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day10.collection.list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListSearchQuiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day10.collection.list.ListSearchQuiz" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
@@ -129,19 +143,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day10.exception.UserMain" />
-      <module name="java_basic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="day10.exception.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="day10.generic.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day10.generic.Main" />
       <module name="java_basic" />
@@ -157,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.ListSearchQuiz" />
+        <item itemvalue="애플리케이션.LIstExample" />
         <item itemvalue="애플리케이션.Main" />
         <item itemvalue="애플리케이션.Static_ex" />
-        <item itemvalue="애플리케이션.LIstExample" />
         <item itemvalue="애플리케이션.day10.generic.Main" />
-        <item itemvalue="애플리케이션.UserMain" />
       </list>
     </recent_temporary>
   </component>
