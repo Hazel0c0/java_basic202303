@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0406 오후 수업 끝( 오전 수업 내용 가져와야함, 오후는 문제풀기+풀이)">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_21_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_21_________Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_22_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_22_________Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day10/collection/list/ListSearchQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/list/ListSearchQuiz.java" afterDir="false" />
     </list>
@@ -25,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="soon9" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,6 +87,7 @@
       <recent name="D:\java_basic\src\day07" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="day10.collection.list" />
       <recent name="day04.array" />
       <recent name="day07.inherit" />
       <recent name="day03" />
@@ -159,9 +163,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="애플리케이션.ListSearchQuiz" />
-        <item itemvalue="애플리케이션.LIstExample" />
-        <item itemvalue="애플리케이션.Main" />
         <item itemvalue="애플리케이션.Static_ex" />
+        <item itemvalue="애플리케이션.Main" />
+        <item itemvalue="애플리케이션.LIstExample" />
         <item itemvalue="애플리케이션.day10.generic.Main" />
       </list>
     </recent_temporary>
@@ -360,7 +364,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/day07/inherit/Main.java</url>
           <line>4</line>
-          <properties class="day07.inherit.Main" method="aa">
+          <properties class="day07.inherit.Main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

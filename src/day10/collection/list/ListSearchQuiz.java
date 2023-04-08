@@ -28,6 +28,7 @@ public class ListSearchQuiz {
           isName);
 
       // 4. 탐색에 실패하면 실패한 증거를 확보한다.
+  /*
       try {
         if (!isName)
           throw new Exception();
@@ -36,6 +37,8 @@ public class ListSearchQuiz {
         System.out.println("이름을 다시 입력해랏!");
         e.printStackTrace();
       }
+
+   */
 
       // 3. 탐색에 성공하면 해당 이름의 인덱스를 알아온다.
       if (isName) {
@@ -47,12 +50,19 @@ public class ListSearchQuiz {
         // 6. 찾은 인덱스를 통해 새로운 이름으로 수정한다.
         tvxq.set(index, newName);
 
-
+        System.out.println("변경완료!!");
+        System.out.println("* 변경 후 정보 : " + tvxq);
         // 7. 위 내용을 수정이 정확히 완료될때까지 반복한다.
         break;
+      } else {
+        try {
+            throw new Exception();
+        } catch (Exception e) {
+          System.out.println("이름을 다시 입력해랏!");
+          e.printStackTrace();
+        }
       }
     }
-    System.out.println(tvxq);
   }
 }
 
