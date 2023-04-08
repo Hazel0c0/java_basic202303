@@ -9,7 +9,7 @@ public class Count {
 
 
     // 정적 메서드
-    public static void m1(Count c4) {
+        public static void m1(Count c4) {
         System.out.println("static메서드 호출!");
         // 필드 참조 (static메서드 안에서는 static필드만 참조가능)
         // static은 this정보를 알수가 없어서 호출불가능
