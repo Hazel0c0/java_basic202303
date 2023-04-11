@@ -1,7 +1,10 @@
 package day05.member;
 
+import java.time.LocalDate;
+
 //기능은 하나에 하나씩!
 public class Member {
+  public LocalDate regDate;
   // 역할 : 한명의 회원정보를 묶어주는 역할
   String email;
   String password;

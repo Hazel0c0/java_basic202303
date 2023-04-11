@@ -2,6 +2,9 @@ package day08.poly.soon;
 
 import day04.array.StringList;
 
+import java.io.*;
+import java.util.Map;
+
 public class ArtistRepository {
   private static Artist[] artistList; // 가수 배열
 
@@ -75,5 +78,48 @@ public class ArtistRepository {
   // 등록된 가수의 수 반환
   public int count() {
     return artistList.length;
+  }
+
+  // 자동 세이브 기능
+  public void autoSave() {
+
+    File f = new File("D:/music");
+    if (!f.exists()) f.mkdir();
+
+    try (ObjectOutputStream oos
+             = new ObjectOutputStream(
+        new FileOutputStream("D:/music/m.sav")
+    )) {
+      oos.writeObject(artistList);
+
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+
+  }
+
+  // 자동 로드 기능
+  public void loadFile() {
+
+    // 세이브파일이 존재한다면
+    File f = new File("D:/music/m.sav");
+
+    if (f.exists()) {
+      // 로드해라~
+      try (ObjectInputStream ois =
+               new ObjectInputStream(
+                   new FileInputStream(f)
+               )) {
+
+//        artistList = (Map<String, Artist>) ois.readObject();
+
+      } catch (FileNotFoundException e) {
+        throw new RuntimeException(e);
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
   }
 }
