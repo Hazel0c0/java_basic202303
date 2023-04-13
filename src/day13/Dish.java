@@ -9,6 +9,7 @@ public class Dish {
 
     public enum Type {
         MEAT, FISH, OTHER
+
     }
 
     public Dish(String name, boolean vegeterian, int calories, Type type) {
