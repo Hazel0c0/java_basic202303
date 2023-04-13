@@ -1,0 +1,1523 @@
+Index: src/day10/collection/song/Artist.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/collection/song/Artist.java b/src/day10/collection/song/Artist.java
+new file mode 100644
+--- /dev/null	(date 1681184269219)
++++ b/src/day10/collection/song/Artist.java	(date 1681184269219)
+@@ -0,0 +1,44 @@
++package day10.collection.song;
++
++import day04.array.StringList;
++
++import java.io.Serializable;
++import java.util.Set;
++
++public class Artist implements Serializable {
++
++    private String name;  // 가수 이름
++    private Set<String> songList; // 노래 목록
++
++    public Artist() {
++
++    }
++
++    public Artist(String name, Set<String> songList) {
++        this.name = name;
++        this.songList = songList;
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    public Set<String> getSongList() {
++        return songList;
++    }
++
++    public void setSongList(Set<String> songList) {
++        this.songList = songList;
++    }
++
++    // 가수의 정보를 출력하는 기능
++    public void info() {
++        System.out.println("가수명: " + this.name);
++        System.out.println("노래 목록: " + this.songList);
++    }
++
++}
+Index: src/day13/Sorting.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/Sorting.java b/src/day13/Sorting.java
+new file mode 100644
+--- /dev/null	(date 1681270731202)
++++ b/src/day13/Sorting.java	(date 1681270731202)
+@@ -0,0 +1,36 @@
++package day13;
++
++import java.util.Comparator;
++import java.util.stream.Collectors;
++
++import static day07.util.Utility.makeLine;
++import static day13.Menu.menuList;
++import static java.util.stream.Collectors.toList;
++
++public class Sorting {
++  public static void main(String[] args) {
++
++    // stream의 정렬 sorted
++    // 메뉴 목록중 칼로리가 낮은 순으로 정렬
++    menuList.stream()
++        .sorted(Comparator.comparing(d -> d.getType()))
++        .collect(Collectors.toList())
++        .forEach(d -> System.out.println(d));
++
++    makeLine();
++    // 메뉴 목록중 이름으로 내림차 정렬(zyx 순)
++    menuList.stream()
++        .sorted(Comparator.comparing(Dish::getName).reversed())
++        .collect(Collectors.toList())
++        .forEach(d -> System.out.println(d));
++
++
++    makeLine();
++    menuList.stream()
++        .filter(dish -> dish.getCalories() > 300)
++        .sorted(Comparator.comparing(Dish::getCalories).reversed())
++        .limit(3) // 앞에서부터 3개 추출
++        .collect(toList())
++        .forEach(dish -> System.out.println(dish));
++  }
++}
+Index: src/day10/collection/song/ArtistRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/collection/song/ArtistRepository.java b/src/day10/collection/song/ArtistRepository.java
+new file mode 100644
+--- /dev/null	(date 1681214181327)
++++ b/src/day10/collection/song/ArtistRepository.java	(date 1681214181327)
+@@ -0,0 +1,119 @@
++package day10.collection.song;
++
++import java.io.*;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.Map;
++import java.util.Set;
++
++public class ArtistRepository {
++
++    // key: 가수의 이름, value: 가수 객체
++    public static Map<String, Artist> artistList; // 가수 배열
++
++    static {
++        artistList = new HashMap<>();
++    }
++
++    // 신규 가수를 첫 노래와 함께 배열에 추가하는 기능
++    public void addNewArtist(String artistName, String songName) {
++//        // 1. 가수 객체 생성
++//        Artist artist = new Artist();
++//
++//        // 2. 생성된 가수 객체에 전달받은 이름 셋팅
++//        artist.setName(artistName);
++//
++//        // 3. 생성된 가수 객체에 노래 목록 생성해서 셋팅
++//        artist.setSongList(new StringList());
++//
++//        // 4. 해당 노래목록에 전달받은 노래 추가
++//        artist.getSongList().push(songName);
++
++        Artist artist = new Artist(artistName, new HashSet<>());
++        artist.getSongList().add(songName);
++
++        // 5. 가수맵에 해당 가수 객체 추가
++        artistList.put(artist.getName(), artist);
++
++        // 6. 세이브파일에 저장
++        autoSave();
++    }
++
++    // 가수명을 받아서 해당 가수가 등록된 가수인지 확인하는 기능
++    public boolean isRegistered(String artistName) {
++        return artistList.containsKey(artistName);
++    }
++
++    // 가수명을 통해 가수 객체 정보를 반환하는 기능
++    public Artist findArtistByName(String artistName) {
++
++        return artistList.get(artistName);
++    }
++
++    // 기존 가수 객체에 노래를 추가하는 기능
++    public boolean addNewSong(String artistName, String songName) {
++        Artist artist = findArtistByName(artistName);
++        boolean flag = artist.getSongList().add(songName);
++        if (flag) autoSave();
++        return flag;
++    }
++
++    // 특정 가수의 노래목록을 반환하는 기능
++    public Set<String> getSongList(String artistName) {
++        return findArtistByName(artistName).getSongList();
++    }
++
++    // 등록된 가수의 수 반환
++    public int count() {
++        return artistList.size();
++    }
++
++
++    // 자동 세이브 기능
++    public void autoSave() {
++
++        File f = new File("D:/music");
++        if (!f.exists()) f.mkdir();
++
++        try (ObjectOutputStream oos
++                = new ObjectOutputStream(
++                        new FileOutputStream("D:/music/m.sav")
++        )) {
++            oos.writeObject(artistList);
++
++        } catch (FileNotFoundException e) {
++            throw new RuntimeException(e);
++        } catch (IOException e) {
++            throw new RuntimeException(e);
++        }
++
++    }
++
++
++    // 자동 로드 기능
++    public static void loadFile() {
++
++        // 세이브파일이 존재한다면
++        File f = new File("D:/music/m.sav");
++
++        if (f.exists()) {
++            // 로드해라~
++            try (ObjectInputStream ois =
++                    new ObjectInputStream(
++                            new FileInputStream(f)
++                    )) {
++
++                artistList = (Map<String, Artist>) ois.readObject();
++
++            } catch (FileNotFoundException e) {
++                throw new RuntimeException(e);
++            } catch (IOException e) {
++                throw new RuntimeException(e);
++            } catch (ClassNotFoundException e) {
++                throw new RuntimeException(e);
++            }
++        }
++
++    }
++
++}
+Index: src/day13/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/Menu.java b/src/day13/Menu.java
+new file mode 100644
+--- /dev/null	(date 1681259330420)
++++ b/src/day13/Menu.java	(date 1681259330420)
+@@ -0,0 +1,23 @@
++package day13;
++
++import java.util.List;
++
++public class Menu {
++
++  public static final List<Dish> menuList;
++
++  static {
++    menuList = List.of(
++        new Dish("pork", false, 800, Dish.Type.MEAT),
++        new Dish("beef", false, 700, Dish.Type.MEAT),
++        new Dish("chicken", false, 400, Dish.Type.MEAT),
++        new Dish("french fries", true, 530, Dish.Type.OTHER),
++        new Dish("rice", true, 350, Dish.Type.OTHER),
++        new Dish("season fruit", true, 120, Dish.Type.OTHER),
++        new Dish("pizza", true, 550, Dish.Type.OTHER),
++        new Dish("prawns", false, 400, Dish.Type.FISH),
++        new Dish("salmon", false, 450, Dish.Type.FISH)
++    );
++  }
++
++}
+\ No newline at end of file
+Index: src/day13/정리.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/정리.java b/src/day13/정리.java
+new file mode 100644
+--- /dev/null	(date 1681270855521)
++++ b/src/day13/정리.java	(date 1681270855521)
+@@ -0,0 +1,60 @@
++package day13;
++
++import java.util.ArrayList;
++import java.util.Comparator;
++import java.util.List;
++
++import static java.util.Comparator.comparing;
++import static java.util.stream.Collectors.toList;
++
++public class 정리 {
++    /*
++        요리 목록에서 칼로리가 400칼로리보다 작은 요리들만 추출해서
++        칼로리가 낮은순서대로 오름차정렬한 후
++        그 요리의 이름들만 추출해서 리스트로 만들고 싶어요~
++     */
++
++  // 스트림을 사용하지 않은 코드
++  public static List<String> getHealthyDishName1(List<Dish> menu) {
++    // 400칼로리 미만 요리만 담을것임
++    List<Dish> lowCaloricDishes = new ArrayList<>();
++    for (Dish dish : menu) {
++      if (dish.getCalories() < 400) {
++        lowCaloricDishes.add(dish);
++      }
++    }
++    // 칼로리 낮은 순으로 오름차 정렬
++    lowCaloricDishes.sort(new Comparator<Dish>() {
++      @Override
++      public int compare(Dish o1, Dish o2) {
++        return o1.getCalories() - o2.getCalories();
++      }
++    });
++
++    // 요리의 이름을 담을 리스트
++    List<String> dishNames = new ArrayList<>();
++    for (Dish lowCaloricDish : lowCaloricDishes) {
++      dishNames.add(lowCaloricDish.getName());
++    }
++    return dishNames;
++  }
++
++  // 스트림을 사용한 코드
++  public static List<String> getHealthyDishName2(List<Dish> menu) {
++    return menu.stream()
++        .filter(d -> d.getCalories() < 400)
++        .sorted(comparing(Dish::getCalories))
++        .map(Dish::getName)
++        .collect(toList());
++  }
++
++  public static void main(String[] args) {
++
++    List<String> dishName1 = getHealthyDishName1(Menu.menuList);
++    System.out.println("dishName1 = " + dishName1);
++
++    List<String> dishName2 = getHealthyDishName2(Menu.menuList);
++    System.out.println("dishName2 = " + dishName2);
++
++  }
++}
+\ No newline at end of file
+Index: src/day13/practice/Trader.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/practice/Trader.java b/src/day13/practice/Trader.java
+new file mode 100644
+--- /dev/null	(date 1681271104407)
++++ b/src/day13/practice/Trader.java	(date 1681271104407)
+@@ -0,0 +1,25 @@
++package day13.practice;
++
++public class Trader {
++
++  private final String name;
++  private final String city;
++
++  public Trader(String name, String city) {
++    this.name = name;
++    this.city = city;
++  }
++
++  public String getName() {
++    return name;
++  }
++
++  public String getCity() {
++    return city;
++  }
++
++  @Override
++  public String toString() {
++    return String.format("Trader: %s in %s", name, city);
++  }
++}
+\ No newline at end of file
+Index: src/day13/practice/Transaction.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/practice/Transaction.java b/src/day13/practice/Transaction.java
+new file mode 100644
+--- /dev/null	(date 1681271120713)
++++ b/src/day13/practice/Transaction.java	(date 1681271120713)
+@@ -0,0 +1,30 @@
++package day13.practice;
++
++public class Transaction {
++  private final Trader trader; // 거래자
++  private final int year; // 거래연도
++  private final int value; // 거래금액
++
++  public Transaction(Trader trader, int year, int value) {
++    this.trader = trader;
++    this.year = year;
++    this.value = value;
++  }
++
++  public Trader getTrader() {
++    return trader;
++  }
++
++  public int getYear() {
++    return year;
++  }
++
++  public int getValue() {
++    return value;
++  }
++
++  @Override
++  public String toString() {
++    return String.format("{%s, year: %d, value: %d}", trader, year, value);
++  }
++}
+\ No newline at end of file
+Index: src/day13/practice/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/practice/Main.java b/src/day13/practice/Main.java
+new file mode 100644
+--- /dev/null	(date 1681275565499)
++++ b/src/day13/practice/Main.java	(date 1681275565499)
+@@ -0,0 +1,64 @@
++package day13.practice;
++
++import java.util.List;
++import java.util.Optional;
++
++import static java.lang.System.out;
++import static java.util.Comparator.comparing;
++import static java.util.stream.Collectors.toList;
++
++public class Main {
++
++  public static void main(String[] args) {
++
++    Trader raoul = new Trader("Raoul", "Cambridge");
++    Trader mario = new Trader("Mario", "Milan");
++    Trader alan = new Trader("Alan", "Cambridge");
++    Trader brian = new Trader("Brian", "Cambridge");
++
++    List<Transaction> transactions = List.of(
++        new Transaction(brian, 2021, 300),
++        new Transaction(raoul, 2022, 1000),
++        new Transaction(raoul, 2021, 400),
++        new Transaction(mario, 2021, 710),
++        new Transaction(mario, 2022, 700),
++        new Transaction(alan, 2022, 950)
++    );
++
++    // 연습 1: 2021년에 발생한 모든 거래를 찾아 거래액 오름차 정렬(작은 값에서 큰 값).
++
++    // List<Transaction>
++
++
++
++    // 연습 2: 거래자가 근무하는 모든 도시이름을 중복 없이 나열하시오.
++    // List<String>
++    // 거래목록에서 거래자들을 추출한담에 거래자안에 있는 도시이름을 추출
++    // filter :  10개중에 조건에 맞는 3개를 필터링
++    // map :  10개중에 10개를 가져오는데 조건에 맞게 추출
++
++
++
++    // 연습 3: Cambridge에 근무하는 모든 거래자를 찾아 거래자리스트로 이름순으로 오름차정렬.
++    // List<Trader>
++
++
++    // 연습 4: 모든 거래자의 이름을 리스트에 모아서 알파벳순으로  오름차정렬하여 반환
++    // List<String>
++
++
++
++    // 연습 5: Milan에 거주하는 거래자가 한명이라도 있는지 여부 확인?
++
++
++
++    // 연습 6: Cambridge에 사는 거래자의 모든 거래액의 총합 출력.
++
++
++    // 연습 7: 모든 거래에서 최고거래액은 얼마인가?
++
++
++    // 연습 8. 가장 작은 거래액을 가진 거래정보 탐색
++
++  }
++}
+\ No newline at end of file
+Index: src/day13/VagePredicate.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/VagePredicate.java b/src/day13/VagePredicate.java
+new file mode 100644
+--- /dev/null	(date 1681259977145)
++++ b/src/day13/VagePredicate.java	(date 1681259977145)
+@@ -0,0 +1,11 @@
++package day13;
++
++import java.util.function.Predicate;
++
++public class VagePredicate implements Predicate<Dish> {
++
++  @Override
++  public boolean test(Dish dish) {
++    return dish.isVegeterian();
++  }
++}
+Index: src/day13/Finding.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/Finding.java b/src/day13/Finding.java
+new file mode 100644
+--- /dev/null	(date 1681264082995)
++++ b/src/day13/Finding.java	(date 1681264082995)
+@@ -0,0 +1,27 @@
++package day13;
++
++import java.util.Comparator;
++
++import static day13.Menu.menuList;
++
++public class Finding {
++  public static void main(String[] args) {
++    // 메뉴 목록에서 채식주의자가 먹을 수 있는 요리가 존재하나?
++    boolean flag1 = menuList.stream()
++        .anyMatch(dish -> dish.isVegeterian());
++    System.out.println("flag1 = " + flag1);
++
++    // 메뉴 목록에 모든 요리가 1000카롤리 미만이냐?
++    boolean flag3 = menuList.stream().allMatch(dish -> dish.getCalories() < 1000);
++    System.out.println("flag3 = " + flag3);
++
++    // 1000 칼로리 넘는게 하나도 없냐
++    boolean flag4 = menuList.stream().noneMatch(dish -> dish.getCalories() > 1000);
++    System.out.println("flag4 = " + flag4);
++
++    Dish dish1 = menuList.stream()
++        .min(Comparator.comparing(dish -> dish.getCalories()))
++        .get();
++    System.out.println("dish1 = " + dish1);
++  }
++}
+Index: src/day13/Mapping.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/Mapping.java b/src/day13/Mapping.java
+new file mode 100644
+--- /dev/null	(date 1681268640974)
++++ b/src/day13/Mapping.java	(date 1681268640974)
+@@ -0,0 +1,73 @@
++package day13;
++
++import java.util.List;
++import java.util.stream.Collectors;
++
++import static day07.util.Utility.makeLine;
++import static day13.Menu.menuList;
++
++public class Mapping {
++  public static void main(String[] args) {
++    //stream map: 리스트에서 원하는 정보만 추출
++    //메뉴 목록에서 요리의 이름들만 목록으로 추출
++    List<String> dishNames = menuList.stream()
++        .map(dish -> dish.getName())
++        .collect(Collectors.toList());
++    System.out.println("dishNames = " + dishNames);
++
++    makeLine();
++
++    List<String> words = List.of(
++        "사파리", "크롬", "엣지", "오페라", "파이어폭스"
++    );
++
++    List<Integer> wordLengths = words.stream()
++        .map(s -> s.length())
++        .collect(Collectors.toList());
++    System.out.println("wordLengths = " + wordLengths);
++
++    // 메뉴목록에서 메뉴이름과 칼로리를 추출하는데
++    // 칼뢰리를 정수가 아닌 문자열로 kcal을 뒤에 붙여서 추출 후
++    // 메뉴이름 : ooo kcal 로 반복 출력하고 싶음
++    List<SimpleDish> simpleDishes = menuList.stream()
++        .map(dish -> new SimpleDish(dish))
++        // 배열 or 객체로 묶어서 리턴 ( 2개 이상일때)
++        .collect(Collectors.toList());
++
++    simpleDishes.forEach(sd -> System.out.println(sd));
++    /*
++       dish -> {
++      String name = dish.getName();
++      int calories = dish.getCalories();
++       }
++     */
++
++    makeLine();
++    /*
++      메뉴 목록에서 칼로리 - 500 보다 큰 음식 필터링
++      음식 이름, 타입만 추출해서 출력
++     */
++    List<DishNameType> dnt = menuList.stream()
++        .filter(dish -> dish.getCalories() > 500)
++        .limit(2) //상위 2개만 추출해줘
++        .map(dish -> new DishNameType(dish))
++        .collect(Collectors.toList());
++    System.out.println("dnt = " + dnt);
++
++    makeLine();
++    //메뉴 목록에 있는 요리들 총 칼로리수 구하기
++    int sum = menuList.stream()
++        .mapToInt(value -> value.getCalories())
++        .sum();
++    System.out.println("sum = " + sum);
++
++    //평균
++    double averageCal = menuList.stream()
++        // 육류들 평균만 구할거면
++        .filter(d->d.getType()== Dish.Type.MEAT)
++        .mapToInt(d -> d.getCalories())
++        .average() // 바로 더블로 하면 터질수도 (0으로 나누는 경우)
++        .getAsDouble();
++    System.out.println("averageCal = " + averageCal);
++  }
++}
+Index: src/day13/SimpleDish.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/SimpleDish.java b/src/day13/SimpleDish.java
+new file mode 100644
+--- /dev/null	(date 1681266309297)
++++ b/src/day13/SimpleDish.java	(date 1681266309297)
+@@ -0,0 +1,33 @@
++package day13;
++
++// 요리 정보 중에 이름과 칼로리만 관리하는 객체
++public class SimpleDish {
++
++  private final String name;
++  private final String calories;
++
++  public SimpleDish(Dish dish){
++    this.name= dish.getName();
++    this.calories=dish.getCalories()+"kcal";
++  }
++  public SimpleDish(String name, String calories) {
++    this.name = name;
++    this.calories = calories;
++  }
++
++  public String getName() {
++    return name;
++  }
++
++  public String getCalories() {
++    return calories;
++  }
++
++  @Override
++  public String toString() {
++    return "SimpleDish{" +
++        "name='" + name + '\'' +
++        ", calories='" + calories + '\'' +
++        '}';
++  }
++}
+\ No newline at end of file
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># 인텔리제이 설정\r\n1. 한글버전 설치\r\n- shift 두번 연타 후  plugin 검색 (korean)\r\n\r\n2. 테마, 아이콘 테마 설치\r\n- plugin에서 material검색\r\n- Atom material icon, Material Theme UI\r\n    - 테마 적용하기\r\n    - 파일 -> 설정 -> 테마 검색 후 -> 모양 탭에서 테마 선택\r\n\r\n3. 기본 폰트사이즈, 폰트사이즈 조절 설정\r\n- 파일 -> 설정 -> 글꼴 검색 후 사이즈 조정\r\n- 파일 -> 설정 -> 마우스 검색 후 -> 일반 탭에서 -> 마우스 휠로 크기조절 + 모든에디터 적용 체크\r\n\r\n4. 깃허브 연동\r\n- 파일 -> 설정 -> 버전관리
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 53f8e6ce9894c38e2d2f5545cb23c7614cd80574)
++++ b/README.md	(date 1681258463986)
+@@ -1,3 +1,47 @@
++## 자바 8 람다 문법
++- 여러가지 람다 표현식
++  1. `(String s) -> s.length()` : String형식의 파라미터 하나를 가지며 int를 반환한다. 람다표현식에는 return이 함축되어 있다.
++  1. `(Apple a) -> a.getWeight() > 150` : Apple형식의 파라미터 하나를 가지며 boolean을 반환한다.
++  1. int형식의 2개의 파라미터를 가지며 리턴값이 없다.
++      ```
++           (int x, int y) -> {
++               System.out.println("Result:");
++               System.out.println(x + y);
++           }
++      ```
++  1. `() -> 42` : 파라미터가 없으며 42를 반환한다.
++
++- 제공되는 함수형 인터페이스
++
++함수형 인터페이스 | 함수 디스크립터 |
++---|---|
++Predicate<T> | T -> boolean
++Consumer<T> | T -> void
++Function<T, R> | T -> R
++Supplier<T> | () -> T
++UnaryOperator<T> | T -> T
++BinaryOperator<T> | (T, T) -> T
++BiPredicate<L, R> | (T, U) -> boolean
++BiConsumer<T, U> | (T, U) -> void
++BiFunction<T, U, R> | (T, U) -> R
++
++- 메서드 참조
++  - `(args) -> ClassName.staticMethod(args)` => `ClassName::staticMethod`
++    - `() -> Math.random()` => `Math::random`
++    - `message -> System.out.println(message)` => `System.out::println`
++
++  - `(args0, rest) -> args0.instanceMethod(rest)` => `ClassName::instanceMethod`
++    - `(str, i) -> str.substring(i)` => `String::substring`
++    - `(apple) -> apple.getWeight()` => `Apple::getWeight`
++  - `(args) -> expr.instanceMethod(args)` => `expr::instanceMethod`
++    - `(s) -> this.isValidName(s)` => `this::isValidName`
++
++- 생성자 참조
++  - `() -> new Constructor()` => `ClassName::new`
++    - `() -> new Apple()`  => `Apple::new`
++  - `(args) -> new Constructor(args)` => `ClassName::new`
++    - `(weight) -> new Apple(weight)` => `Apple::new`
++
+ # 인텔리제이 설정
+ 1. 한글버전 설치
+ - shift 두번 연타 후  plugin 검색 (korean)
+Index: src/day10/collection/song/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/collection/song/Main.java b/src/day10/collection/song/Main.java
+new file mode 100644
+--- /dev/null	(date 1681184269219)
++++ b/src/day10/collection/song/Main.java	(date 1681184269219)
+@@ -0,0 +1,11 @@
++package day10.collection.song;
++
++public class Main {
++    public static void main(String[] args) {
++
++        // 세이브파일 자동로드
++        ArtistRepository.loadFile();
++
++        ArtistView.start();
++    }
++}
+Index: src/day10/collection/song/ArtistView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/collection/song/ArtistView.java b/src/day10/collection/song/ArtistView.java
+new file mode 100644
+--- /dev/null	(date 1681184258564)
++++ b/src/day10/collection/song/ArtistView.java	(date 1681184258564)
+@@ -0,0 +1,91 @@
++package day10.collection.song;
++
++import java.util.Set;
++
++import static day07.util.Utility.input;
++import static day07.util.Utility.makeLine;
++
++public class ArtistView {
++
++    private final static ArtistRepository ar;
++
++    static {
++        ar = new ArtistRepository();
++    }
++
++    // 메인 실행기능
++    public static void start() {
++
++        while (true) {
++            System.out.println("\n\n****** 음악 관리 프로그램 ******");
++            System.out.printf("# 현재 등록된 가수: %d명\n", ar.count());
++            System.out.println("# 1. 노래 등록하기");
++            System.out.println("# 2. 노래 정보 검색");
++            System.out.println("# 3. 프로그램 종료");
++            makeLine();
++
++            String menuNum = input(">> ");
++
++            switch (menuNum) {
++                case "1":
++                    insertProcess();
++                    break;
++                case "2":
++                    searchProcess();
++                    break;
++                case "3":
++                    System.out.println("# 프로그램을 종료합니다.");
++                    System.exit(0);
++                    break;
++                default:
++                    System.out.println("# 메뉴를 잘못 입력했습니다!");
++            }
++
++        }
++    }
++
++
++    // 1번 메뉴 기능
++    private static void insertProcess() {
++
++        System.out.println("\n# 노래 등록을 시작합니다.");
++        String artistName = input("- 가수명: ");
++        String songName = input("- 노래명: ");
++
++        // 신규 가수인 경우
++        if (!ar.isRegistered(artistName)) {
++            ar.addNewArtist(artistName, songName);
++            System.out.printf("\n# %s님이 신규 등록되었습니다.\n", artistName);
++        } else { // 기존가수인 경우
++            boolean flag = ar.addNewSong(artistName, songName);
++            if (flag) {
++                System.out.printf("\n# %s님의 노래목록에 %s곡이 추가되었습니다.\n", artistName, songName);
++            } else {
++                System.out.printf("\n# [%s]곡은 이미 등록된 노래입니다.\n", songName);
++            }
++        }
++
++    }
++
++    // 2번 메뉴 기능
++    private static void searchProcess() {
++
++        System.out.println("\n# 검색할 가수명을 입력하세요.");
++        String artistName = input("- 가수명: ");
++
++        if (ar.isRegistered(artistName)) {
++            // 등록된 경우
++            System.out.printf("\n# %s님의 노래목록 \n", artistName);
++            makeLine();
++            Set<String> songList = ar.getSongList(artistName);
++            int i = 0;
++            for (String song : songList) {
++                System.out.printf("* %d. %s\n", i+1, song);
++                i++;
++            }
++        } else {
++            System.out.println("\n# 해당 가수는 등록되지 않았습니다.");
++        }
++    }
++
++}
+Index: src/day13/DishNameType.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/DishNameType.java b/src/day13/DishNameType.java
+new file mode 100644
+--- /dev/null	(date 1681267064275)
++++ b/src/day13/DishNameType.java	(date 1681267064275)
+@@ -0,0 +1,36 @@
++package day13;
++
++public class DishNameType {
++  private final String name;
++  private final Dish.Type type; // 요리 카테고리
++  public enum Type {
++    MEAT, FISH, OTHER
++  }
++
++  @Override
++  public String toString() {
++    return "CalDish{" +
++        "name='" + name + '\'' +
++        ", type=" + type +
++        "}\n";
++  }
++
++  public DishNameType(Dish dish) {
++    this.name=dish.getName();
++    this.type=dish.getType();
++  }
++
++  public DishNameType(String name, Dish.Type type) {
++
++    this.name = name;
++    this.type = type;
++  }
++
++  public String getName() {
++    return name;
++  }
++
++  public Dish.Type getType() {
++    return type;
++  }
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6b872ce2-4d43-4fe9-85e6-f1310087279c\" name=\"Changes\" comment=\"0411 람다식 re\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/day05/member/Member.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/day05/member/Member.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"Interface\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"soon9\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"e5037bf5-ecdf-4e4a-9ab3-2bc0cc4619fd\" />\r\n        <option name=\"url\" value=\"https://github.com/Hazel0c0/java_basic202303.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/io/InputStream.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/ArrayIndexOutOfBoundsException.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/Object.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/String.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/System.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/ArrayList.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/Collection.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/Date.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/HashSet.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/List.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/Map.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/Set.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2NZkIEUMREHFNJZC5zRF7HRA3vE\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"ToolWindow실행.ShowToolbar\": \"false\",\r\n    \"last_opened_file_path\": \"D:/airSamjo\",\r\n    \"project.structure.last.edited\": \"프로젝트\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"project.propCompiler\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"day12.lambda\" />\r\n      <recent name=\"day09\" />\r\n      <recent name=\"day05.member\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\java_basic\\src\\day10\\collection\\map\" />\r\n      <recent name=\"D:\\java_basic\\src\\day11\\api\" />\r\n      <recent name=\"D:\\java_basic\\src\\day11\\api\\obj\" />\r\n      <recent name=\"C:\\Users\\monda\\IdeaProjects\\java_basic202303\\src\\day10\\collection\\map\" />\r\n      <recent name=\"C:\\Users\\monda\\IdeaProjects\\java_basic202303\\src\\day10\\collection\\list\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"day10.collection.list\" />\r\n      <recent name=\"day04.array\" />\r\n      <recent name=\"day07.inherit\" />\r\n      <recent name=\"day03\" />\r\n      <recent name=\"day02\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"애플리케이션.day12.lambda.Main\">\r\n    <configuration name=\"FileReaderExample\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day11.io.rw.FileReaderExample\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day11.io.objstream.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day12.inner.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day12.inner.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SaveSnack\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day11.io.objstream.SaveSnack\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day11.io.objstream.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"day11.api.obj.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day11.api.obj.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day11.api.obj.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"day12.lambda.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day12.lambda.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day12.lambda.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"애플리케이션.day12.lambda.Main\" />\r\n        <item itemvalue=\"애플리케이션.Main\" />\r\n        <item itemvalue=\"애플리케이션.SaveSnack\" />\r\n        <item itemvalue=\"애플리케이션.FileReaderExample\" />\r\n        <item itemvalue=\"애플리케이션.day11.api.obj.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <created>1679878911194</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1679878911194</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Changes\">\r\n      <created>1679880968053</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679880968053</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Changes\">\r\n      <created>1679880976514</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679880976514</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Changes\">\r\n      <created>1679881455594</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679881455594</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"배열 push, pop 공부하기\">\r\n      <created>1679974870980</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679974870980</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"배열 push, pop 공부하기\">\r\n      <created>1679979452772</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679979452772</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"메소드 베이직 파일 _ ... 공부\">\r\n      <created>1680061154402</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680061154402</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"0329 수업 종료\">\r\n      <created>1680085148309</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680085148309</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"enum 다시보기\">\r\n      <created>1680139505614</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680139505614</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"오전 수업 끝\">\r\n      <created>1680148192966</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680148192966</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"오전 수업 끝 0331\">\r\n      <created>1680240847183</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680240847183</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"0403 회원이 없을 때 5번 메뉴 비활성화 시키기\">\r\n      <created>1680503443230</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680503443230</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"0403 수업 끝\">\r\n      <created>1680511860972</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680511860972</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"0404 5교시 스태틱 - 스캐너 부분 공부하기\">\r\n      <created>1680589038690</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680589038690</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"0404 5교시 로또번호 다시 풀어보기\">\r\n      <created>1680595583409</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680595583409</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"0405 day07 스태틱_ 보기\">\r\n      <created>1680661610878</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680661610878</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"(int) (Math.random() * 40 + 10);\">\r\n      <created>1680661731703</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680661731703</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"밑에꺼 수정\">\r\n      <created>1680684546651</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680684546651</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"0406 오후 수업 끝( 오전 수업 내용 가져와야함, 오후는 문제풀기+풀이)\">\r\n      <created>1680773797418</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680773797418</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"ListSearchQuiz end\">\r\n      <created>1680944913755</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680944913757</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"0410\">\r\n      <created>1681062657646</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681062657646</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"0411 람다식 re\">\r\n      <created>1681179804912</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681179804912</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"22\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Changes\" />\r\n    <MESSAGE value=\"배열 push, pop 공부하기\" />\r\n    <MESSAGE value=\"어레이 퀴즈 공부하기\" />\r\n    <MESSAGE value=\"메소드 베이직 파일 _ ... 공부\" />\r\n    <MESSAGE value=\"문제 마저 풀기\" />\r\n    <MESSAGE value=\"0329 수업 종료\" />\r\n    <MESSAGE value=\"enum 다시보기\" />\r\n    <MESSAGE value=\"오전 수업 끝\" />\r\n    <MESSAGE value=\"오전 수업 끝 ( String List 마저 만들기)\" />\r\n    <MESSAGE value=\"오전 수업 끝 0331\" />\r\n    <MESSAGE value=\"0403 회원이 없을 때 5번 메뉴 비활성화 시키기\" />\r\n    <MESSAGE value=\"0403 수업 끝\" />\r\n    <MESSAGE value=\"0404 5교시 스태틱 - 스캐너 부분 공부하기\" />\r\n    <MESSAGE value=\"0404 5교시 로또번호 다시 풀어보기\" />\r\n    <MESSAGE value=\"0405 day07 스태틱_ 보기\" />\r\n    <MESSAGE value=\"(int) (Math.random() * 40 + 10);\" />\r\n    <MESSAGE value=\"대여하기 me 완성. 대여상태, 대여일수.. 설정 해보기\" />\r\n    <MESSAGE value=\"밑에꺼 수정\" />\r\n    <MESSAGE value=\"0406 오후 수업 끝( 오전 수업 내용 가져와야함, 오후는 문제풀기+풀이)\" />\r\n    <MESSAGE value=\"ListSearchQuiz end\" />\r\n    <MESSAGE value=\"0410\" />\r\n    <MESSAGE value=\"0411 람다식 re\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"0411 람다식 re\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/day02/ArrayPush2.java</url>\r\n          <line>18</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/day02/ArrayQuizFood_T.java</url>\r\n          <line>11</line>\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </line-breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.ArrayIndexOutOfBoundsException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"6\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"8\" />\r\n        </breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/day07/inherit/Main.java</url>\r\n          <line>4</line>\r\n          <properties class=\"day07.inherit.Main\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"11\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 53f8e6ce9894c38e2d2f5545cb23c7614cd80574)
++++ b/.idea/workspace.xml	(date 1681270087513)
+@@ -5,8 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0411 람다식 re">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-03__5_35_________Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_21_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_21_________Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_22_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-04-05__11_22_________Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/day05/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/member/Member.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/day10/collection/list/LIstExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/list/LIstExample.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/day10/collection/map/MapExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/map/MapExample_me.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -17,8 +22,8 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Enum" />
+-        <option value="Class" />
+         <option value="Interface" />
++        <option value="Class" />
+       </list>
+     </option>
+   </component>
+@@ -44,8 +49,10 @@
+     </option>
+   </component>
+   <component name="HighlightingSettingsPerFile">
++    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/io/FileOutputStream.java" root0="SKIP_INSPECTION" />
+     <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/io/InputStream.java" root0="SKIP_INSPECTION" />
+     <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/ArrayIndexOutOfBoundsException.java" root0="SKIP_INSPECTION" />
++    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/Iterable.java" root0="SKIP_INSPECTION" />
+     <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
+     <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
+     <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/System.java" root0="SKIP_INSPECTION" />
+@@ -71,30 +78,31 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "ToolWindow실행.ShowToolbar": "false",
+-    "last_opened_file_path": "D:/airSamjo",
+-    "project.structure.last.edited": "프로젝트",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "project.propCompiler"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;ToolWindow실행.ShowToolbar&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/java_basic/src/day10/collection/song&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CreateClassDialog.RecentsKey">
++      <recent name="day13" />
+       <recent name="day12.lambda" />
+       <recent name="day09" />
+       <recent name="day05.member" />
+     </key>
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="D:\java_basic\src\day10\collection\song" />
+       <recent name="D:\java_basic\src\day10\collection\map" />
+       <recent name="D:\java_basic\src\day11\api" />
+       <recent name="D:\java_basic\src\day11\api\obj" />
+       <recent name="C:\Users\monda\IdeaProjects\java_basic202303\src\day10\collection\map" />
+-      <recent name="C:\Users\monda\IdeaProjects\java_basic202303\src\day10\collection\list" />
+     </key>
+     <key name="CopyClassDialog.RECENTS_KEY">
+       <recent name="day10.collection.list" />
+@@ -104,13 +112,13 @@
+       <recent name="day02" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="애플리케이션.day12.lambda.Main">
+-    <configuration name="FileReaderExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="day11.io.rw.FileReaderExample" />
++  <component name="RunManager" selected="애플리케이션.Sorting">
++    <configuration name="Filtering" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="day13.Filtering" />
+       <module name="java_basic" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="day11.io.objstream.*" />
++          <option name="PATTERN" value="day13.comparator.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -118,12 +126,12 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="day12.inner.Main" />
++    <configuration name="Finding" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="day13.Finding" />
+       <module name="java_basic" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="day12.inner.*" />
++          <option name="PATTERN" value="day13.comparator.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -131,12 +139,12 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="SaveSnack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="day11.io.objstream.SaveSnack" />
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="day13.comparator.Main" />
+       <module name="java_basic" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="day11.io.objstream.*" />
++          <option name="PATTERN" value="day13.comparator.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -144,12 +152,12 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="day11.api.obj.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="day11.api.obj.Main" />
++    <configuration name="Mapping" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="day13.Mapping" />
+       <module name="java_basic" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="day11.api.obj.*" />
++          <option name="PATTERN" value="day13.comparator.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -157,12 +165,12 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="day12.lambda.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="day12.lambda.Main" />
++    <configuration name="Sorting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="day13.Sorting" />
+       <module name="java_basic" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="day12.lambda.*" />
++          <option name="PATTERN" value="day13.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -172,11 +180,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="애플리케이션.day12.lambda.Main" />
++        <item itemvalue="애플리케이션.Sorting" />
+         <item itemvalue="애플리케이션.Main" />
+-        <item itemvalue="애플리케이션.SaveSnack" />
+-        <item itemvalue="애플리케이션.FileReaderExample" />
+-        <item itemvalue="애플리케이션.day11.api.obj.Main" />
++        <item itemvalue="애플리케이션.Mapping" />
++        <item itemvalue="애플리케이션.Finding" />
++        <item itemvalue="애플리케이션.Filtering" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -386,6 +394,11 @@
+           <url>file://$PROJECT_DIR$/src/day02/ArrayQuizFood_T.java</url>
+           <line>11</line>
+           <option name="timeStamp" value="2" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/day12/inner/Main.java</url>
++          <line>20</line>
++          <option name="timeStamp" value="14" />
+         </line-breakpoint>
+         <breakpoint enabled="true" type="java-exception">
+           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+Index: src/day13/comparator/Student.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/comparator/Student.java b/src/day13/comparator/Student.java
+new file mode 100644
+--- /dev/null	(date 1681268927829)
++++ b/src/day13/comparator/Student.java	(date 1681268927829)
+@@ -0,0 +1,50 @@
++package day13.comparator;
++
++public class Student {
++  private String name;
++  private int age;
++  private int score; // 시험점수
++
++  public Student() {
++
++  }
++
++  public Student(String name, int age, int score) {
++    this.name = name;
++    this.age = age;
++    this.score = score;
++  }
++
++  @Override
++  public String toString() {
++    return "Student{" +
++        "name='" + name + '\'' +
++        ", age=" + age +
++        ", score=" + score +
++        '}';
++  }
++
++  public String getName() {
++    return name;
++  }
++
++  public void setName(String name) {
++    this.name = name;
++  }
++
++  public int getAge() {
++    return age;
++  }
++
++  public void setAge(int age) {
++    this.age = age;
++  }
++
++  public int getScore() {
++    return score;
++  }
++
++  public void setScore(int score) {
++    this.score = score;
++  }
++}
+Index: src/day10/collection/map/MapExample_me.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/collection/map/MapExample_me.java b/src/day10/collection/map/MapExample_me.java
+new file mode 100644
+--- /dev/null	(date 1681184391575)
++++ b/src/day10/collection/map/MapExample_me.java	(date 1681184391575)
+@@ -0,0 +1,41 @@
++//package day10.collection.map;
++//
++//import day07.util.Utility;
++//import song.Artist;
++//
++//import java.util.*;
++//
++//public class MapExample {
++//
++//    public static void main(String[] args) {
++//
++//        Map<String, Object> map = new HashMap<>();
++//
++//        // put(K, V) : 데이터 추가
++//        map.put("지갑잔액", 5000);
++//        map.put("좋아하는 가수", new Artist("동방신기", null));
++//        map.put("저녁메뉴", "볶음밥");
++//
++//        System.out.println(map.size());
++//
++//        // get(key) : 데이터 참조
++//        String dinner = (String) map.get("저녁메뉴");
++//        System.out.println("dinner = " + dinner);
++//
++//        Artist artist = (Artist) map.get("좋아하는 가수");
++//        artist.info();
++//
++//        System.out.println(map);
++//
++//        map.put("저녁메뉴", "짬뽕");
++//        System.out.println(map);
++//
++//        // 반복문 처리
++//        for (String key : map.keySet()) {
++//            System.out.println("key = " + key);
++//            System.out.println("value = " + map.get(key));
++//            Utility.makeLine();
++//        }
++//
++//    }
++//}
+Index: src/day13/comparator/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/comparator/Main.java b/src/day13/comparator/Main.java
+new file mode 100644
+--- /dev/null	(date 1681269901531)
++++ b/src/day13/comparator/Main.java	(date 1681269901531)
+@@ -0,0 +1,32 @@
++package day13.comparator;
++
++import day13.SimpleDish;
++
++import java.util.ArrayList;
++import java.util.Comparator;
++import java.util.List;
++
++public class Main {
++  public static void main(String[] args) {
++    List<Student> studentList = new ArrayList<>(
++        List.of( // 불변 리스트 - new ArrayList 안하고 바로 쓰면
++        new Student("홍철수", 15, 79),
++        new Student("홍철목", 17, 70),
++        new Student("홍철금", 11, 95),
++        new Student("홍철토", 25, 89)
++        )
++    );
++    // 나이순으로 오름차 정렬(나이 적은순) -> o1-o2
++    // 점수순으로 내림차 정렬(점수 높은순) -> o2-o1
++    studentList.sort(new Comparator<Student>() {
++      @Override
++      public int compare(Student o1, Student o2) { // A E 람다로 바꾸기
++        return o2.getScore()- o1.getScore();
++      }
++    });
++
++    // 이름 가나다순으로 오름차정렬
++    studentList.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
++    studentList.forEach(student -> System.out.println(student));
++  }
++}
+Index: src/day13/Filtering.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/Filtering.java b/src/day13/Filtering.java
+new file mode 100644
+--- /dev/null	(date 1681263459691)
++++ b/src/day13/Filtering.java	(date 1681263459691)
+@@ -0,0 +1,94 @@
++package day13;
++
++import java.util.List;
++import java.util.function.Predicate;
++import java.util.stream.Collectors;
++
++import static day07.util.Utility.makeLine;
++import static day13.Dish.Type.MEAT;
++import static day13.Menu.*;
++import static java.util.stream.Collectors.*;
++
++public class Filtering {
++  public static void main(String[] args) {
++
++    // stream의 filter
++    // 필터조건에 맞는 데이터들을 필터링
++
++    // 메뉴 목록중에 채식주의자가 먹을 수 있는 요리를 알려주세요
++    List<Dish> filteredList = menuList.stream()
++        .filter(dish -> !dish.isVegeterian()) // lambda
++//        .filter(Filtering::test) // lambda
++        /*
++        .filter((new Predicate<Dish>() {
++          @Override
++          public boolean test(Dish dish) {
++            return !dish.isVegeterian();
++          })
++         */
++        .collect(toList());
++
++    System.out.println("======== 채식주의자 식용 요리 목록 =======");
++    for (Dish dish : filteredList) {
++      System.out.println(dish);
++    }
++
++    filteredList.forEach(dish -> System.out.println(dish));
++
++    //메뉴 목록중에 육류이면서 600칼로리 미만인 요리 필터링
++    makeLine();
++
++    menuList.stream()
++        .filter(d -> d.getType() == MEAT && d.getCalories() < 600)
++        .collect(toList())
++        .forEach(d -> System.out.println(d));
++    // 메서드 체인
++
++    //메뉴 목록에서 요리이름이 4글자인 요리들만 필터링해서 출력
++    makeLine();
++    menuList.stream()
++        .filter(dish -> dish.getName().length() == 4)
++        .collect(toList())
++        .forEach(dish -> System.out.println(dish));
++
++    //원하는 개수만 필터링 하기
++    //칼로리가 300 칼로리보다 큰 요리 중 앞에 3개만 필터링
++    makeLine();
++    menuList.stream()
++        .filter(dish -> dish.getCalories() > 300)
++        .limit(3) // 앞에서부터 3개 추출
++        .collect(toList())
++        .forEach(dish -> System.out.println(dish));
++
++    makeLine();
++    //칼로리 300 높은 요리 중 청므 2개 제끼고 필터링
++    menuList.stream()
++        .filter(dish -> dish.getCalories() > 300)
++        .skip(2) // 앞에서부터 3개 추출
++        .collect(toList())
++        .forEach(dish -> System.out.println(dish));
++
++    makeLine();
++    // 메뉴목록에 처음 등장하는 2개의 고기요리를 필터링해서 리스트에 반환
++    List<Dish> twoMeat = menuList.stream()
++        .filter(dish -> dish.getType() == MEAT)
++        .limit(2)
++        .collect(toList());
++
++    System.out.println(twoMeat);
++
++    makeLine();
++    List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 8, 4, 2, 3, 8, 7, 9, 3, 5, 4);
++
++    // 리스트에서 중복제거하기
++    List<Integer> distinctedList = numbers.stream()
++        //  리스트에서 짝수 걸러내고 중복 제거
++        .filter(n -> n % 2 == 0)
++        .distinct()  // 중복제거
++        .collect(toList());
++
++    System.out.println("distinctedList = " + distinctedList);
++
++  }
++
++}
+Index: src/day10/collection/list/LIstExample.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package day10.collection.list;\r\n\r\nimport java.util.*;\r\n\r\nimport static day07.util.Utility.makeLine;\r\n\r\n/*\r\n  - 저장 데이터의 순서를 보장\r\n  - 인덱스를 가지고 있음\r\n  - 중복 데이터를 저장 가능\r\n\r\n */\r\npublic class LIstExample {\r\n  public static void main(String[] args) {\r\n\r\n    List<String> foodList = new ArrayList<>();\r\n\r\n    // add\r\n    foodList.add(\"바나나\");\r\n    foodList.add(\"탕슉\");\r\n    foodList.add(\"초코초코\");\r\n    foodList.add(\"지우꺼야\");\r\n    foodList.add(\"5555\");\r\n    foodList.add(\"666\");\r\n\r\n    //add(index, element) : 중간 삽입\r\n    foodList.add(2,\"과자먹고싶어\");\r\n\r\n    // size() : 저장된 데이터의 개수를 반환\r\n    int size = foodList.size();\r\n    System.out.println(\"size = \" + size);\r\n\r\n    System.out.println(foodList.toString()); // toString() 생략 가능\r\n\r\n    // indexOf(E e) : 해당 데이터의 인덱스 반환\r\n    int index=foodList.indexOf(\"탕슉\");\r\n    System.out.println(\"index = \" + index);\r\n\r\n    //contains(E e) : 해당 데이터 저장 유무 확인\r\n    System.out.println(\"초코초코 contains  >  \"+foodList.contains(\"초코초코\"));\r\n    System.out.println(\"짜장면  >  \"+foodList.contains(\"짜장면\"));\r\n\r\n    //remove(index), remove(obj)\r\n    String removedFood=foodList.remove(1);\r\n    // 인덱스로 하면 지운 데이터 추출해서 줌\r\n    foodList.remove(\"지우꺼야\");\r\n\r\n    System.out.println(\"지우기 = \" + foodList);\r\n\r\n    //set(index, newElement) : 수정\r\n    foodList.set(0, \"동파육\");\r\n    System.out.println(\"변경 = \" + foodList);\r\n\r\n    // get(index) : 리스트에 저장된 데이터 참조\r\n    String s = foodList.get(1);\r\n    System.out.println(\"get 한거 = \" + s);\r\n\r\n    // 반복문 처리\r\n    makeLine();\r\n    for (int i = 0; i < foodList.size(); i++) {\r\n      System.out.println(foodList.get(i));\r\n    }\r\n\r\n    makeLine();\r\n    for (String food: foodList) {\r\n      System.out.println(\"food = \" + food);\r\n    }\r\n\r\n    // clear() : 내부 데이터 전체삭제\r\n    foodList.clear();\r\n    System.out.println(\"foodList = \" + foodList);\r\n    System.out.println(\"비었니?\"+foodList.isEmpty());\r\n\r\n    makeLine();\r\n    // 리스트에 초기값 넣고 시작하기\r\n    List<String> tvxq = new ArrayList<>(\r\n        Arrays.asList(\"유노우ㅠ노\",\"최강창민\",\"가나다라\")\r\n    );\r\n    System.out.println(\"tvxq = \" + tvxq);\r\n\r\n    makeLine();\r\n    // 정렬 (듀얼 피벗 퀵 정렬)\r\n    List<Integer> numbers = new ArrayList<>(\r\n        Arrays.asList(11,55,77,33,44,66,22)\r\n    );\r\n    System.out.println(\"numbers = \" + numbers);\r\n    \r\n    //오름차 정렬\r\n    Collections.sort(numbers);\r\n    System.out.println(\"numbers = \" + numbers);\r\n\r\n    // 내림차 정렬\r\n    numbers.sort(Comparator.reverseOrder());\r\n    System.out.println(\"numbers = \" + numbers);\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/collection/list/LIstExample.java b/src/day10/collection/list/LIstExample.java
+--- a/src/day10/collection/list/LIstExample.java	(revision 53f8e6ce9894c38e2d2f5545cb23c7614cd80574)
++++ b/src/day10/collection/list/LIstExample.java	(date 1681192987900)
+@@ -37,7 +37,7 @@
+     System.out.println("index = " + index);
+ 
+     //contains(E e) : 해당 데이터 저장 유무 확인
+-    System.out.println("초코초코 contains  >  "+foodList.contains("초코초코"));
++    System.out.println("초코초코 contains  >  "+foodList.contains("초코"));
+     System.out.println("짜장면  >  "+foodList.contains("짜장면"));
+ 
+     //remove(index), remove(obj)
+Index: src/day10/collection/map/MapExample.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//package day10.collection.map;\r\n//\r\n//import day07.util.Utility;\r\n//import song.Artist;\r\n//\r\n//import java.util.*;\r\n//\r\n//public class MapExample {\r\n//\r\n//    public static void main(String[] args) {\r\n//\r\n//        Map<String, Object> map = new HashMap<>();\r\n//\r\n//        // put(K, V) : 데이터 추가\r\n//        map.put(\"지갑잔액\", 5000);\r\n//        map.put(\"좋아하는 가수\", new Artist(\"동방신기\", null));\r\n//        map.put(\"저녁메뉴\", \"볶음밥\");\r\n//\r\n//        System.out.println(map.size());\r\n//\r\n//        // get(key) : 데이터 참조\r\n//        String dinner = (String) map.get(\"저녁메뉴\");\r\n//        System.out.println(\"dinner = \" + dinner);\r\n//\r\n//        Artist artist = (Artist) map.get(\"좋아하는 가수\");\r\n//        artist.info();\r\n//\r\n//        System.out.println(map);\r\n//\r\n//        map.put(\"저녁메뉴\", \"짬뽕\");\r\n//        System.out.println(map);\r\n//\r\n//        // 반복문 처리\r\n//        for (String key : map.keySet()) {\r\n//            System.out.println(\"key = \" + key);\r\n//            System.out.println(\"value = \" + map.get(key));\r\n//            Utility.makeLine();\r\n//        }\r\n//\r\n//    }\r\n//}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/collection/map/MapExample.java b/src/day10/collection/map/MapExample.java
+--- a/src/day10/collection/map/MapExample.java	(revision 53f8e6ce9894c38e2d2f5545cb23c7614cd80574)
++++ b/src/day10/collection/map/MapExample.java	(date 1681212810298)
+@@ -1,41 +1,42 @@
+-//package day10.collection.map;
+-//
+-//import day07.util.Utility;
++package day10.collection.map;
++
++import day07.util.Utility;
++import day08.poly.soon.Artist;
+ //import song.Artist;
+-//
+-//import java.util.*;
+-//
+-//public class MapExample {
+-//
+-//    public static void main(String[] args) {
+-//
+-//        Map<String, Object> map = new HashMap<>();
+-//
+-//        // put(K, V) : 데이터 추가
+-//        map.put("지갑잔액", 5000);
+-//        map.put("좋아하는 가수", new Artist("동방신기", null));
+-//        map.put("저녁메뉴", "볶음밥");
+-//
+-//        System.out.println(map.size());
+-//
+-//        // get(key) : 데이터 참조
+-//        String dinner = (String) map.get("저녁메뉴");
+-//        System.out.println("dinner = " + dinner);
+-//
+-//        Artist artist = (Artist) map.get("좋아하는 가수");
+-//        artist.info();
+-//
+-//        System.out.println(map);
+-//
+-//        map.put("저녁메뉴", "짬뽕");
+-//        System.out.println(map);
+-//
+-//        // 반복문 처리
+-//        for (String key : map.keySet()) {
+-//            System.out.println("key = " + key);
+-//            System.out.println("value = " + map.get(key));
+-//            Utility.makeLine();
+-//        }
+-//
+-//    }
+-//}
++
++import java.util.*;
++
++public class MapExample {
++
++    public static void main(String[] args) {
++
++        Map<String, Object> map = new HashMap<>();
++
++        // put(K, V) : 데이터 추가
++        map.put("지갑잔액", 5000);
++        map.put("좋아하는 가수", new Artist("동방신기", null));
++        map.put("저녁메뉴", "볶음밥");
++
++        System.out.println(map.size());
++
++        // get(key) : 데이터 참조
++        String dinner = (String) map.get("저녁메뉴");
++        System.out.println("dinner = " + dinner);
++
++        Artist artist = (Artist) map.get("좋아하는 가수");
++        artist.info();
++
++        System.out.println(map);
++
++        map.put("저녁메뉴", "짬뽕");
++        System.out.println(map);
++
++        // 반복문 처리
++        for (String key : map.keySet()) {
++            System.out.println("key = " + key);
++            System.out.println("value = " + map.get(key));
++            Utility.makeLine();
++        }
++
++    }
++}
+Index: src/day13/Dish.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day13/Dish.java b/src/day13/Dish.java
+new file mode 100644
+--- /dev/null	(date 1681259195194)
++++ b/src/day13/Dish.java	(date 1681259195194)
+@@ -0,0 +1,46 @@
++package day13;
++
++public class Dish {
++
++  private final String name; // 요리 이름
++  private final boolean vegeterian; // 채식주의 여부
++  private final int calories; // 칼로리
++  private final Type type; // 요리 카테고리
++
++  public enum Type {
++    MEAT, FISH, OTHER
++  }
++
++  public Dish(String name, boolean vegeterian, int calories, Type type) {
++    this.name = name;
++    this.vegeterian = vegeterian;
++    this.calories = calories;
++    this.type = type;
++  }
++
++  public String getName() {
++    return name;
++  }
++
++  public boolean isVegeterian() {
++    return vegeterian;
++  }
++
++  public int getCalories() {
++    return calories;
++  }
++
++  public Type getType() {
++    return type;
++  }
++
++  @Override
++  public String toString() {
++    return "Dish{" +
++        "name='" + name + '\'' +
++        ", vegeterian=" + vegeterian +
++        ", calories=" + calories +
++        ", type=" + type +
++        '}';
++  }
++}
+\ No newline at end of file

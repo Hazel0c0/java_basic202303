@@ -6,12 +6,12 @@ import java.time.LocalDate;
 public class Member {
   public LocalDate regDate;
   // 역할 : 한명의 회원정보를 묶어주는 역할
-  String email;
-  String password;
-  String memberName;
-  int memberId;
-  Gender gender; // a N 열거형 생성!
-  int age;
+  public String email;
+  public String password;
+  public String memberName;
+  public int memberId;
+  public Gender gender; // a N 열거형 생성!
+  public int age;
 
   public Member(String email, String password, String memberName, int memberId, Gender gender, int age) {
     this.email = email;
