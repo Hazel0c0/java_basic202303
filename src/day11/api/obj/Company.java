@@ -1,5 +1,6 @@
 package day11.api.obj;
 
+
 public class Company {
 
     String companyName; // 회사명
