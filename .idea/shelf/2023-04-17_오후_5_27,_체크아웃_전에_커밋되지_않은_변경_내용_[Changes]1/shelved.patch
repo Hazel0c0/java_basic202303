@@ -1,0 +1,379 @@
+Index: .idea/shelf/2023-04-05__11_21_________Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/2023-04-05__11_21_________Changes_.xml b/.idea/shelf/2023-04-05__11_21_________Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/2023-04-05__11_21_________Changes_.xml	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-<changelist name="2023-04-05_오전_11_21,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]" date="1680661285978" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-05_오전_11_21,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="2023-04-05 오전 11:21, 체크아웃 전에 커밋되지 않은 변경 내용 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/2023-04-05__11_22_________Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/2023-04-05__11_22_________Changes_.xml b/.idea/shelf/2023-04-05__11_22_________Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/2023-04-05__11_22_________Changes_.xml	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-<changelist name="2023-04-05_오전_11_22,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]" date="1680661366568" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-05_오전_11_22,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="2023-04-05 오전 11:22, 체크아웃 전에 커밋되지 않은 변경 내용 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/2023-04-05_오전_11_22,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/2023-04-05_오전_11_22,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch b/.idea/shelf/2023-04-05_오전_11_22,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/2023-04-05_오전_11_22,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch	
++++ /dev/null	
+@@ -1,307 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6b872ce2-4d43-4fe9-85e6-f1310087279c\" name=\"Changes\" comment=\"# 상속, 오버라이딩, static\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"c9ff8cd0-0798-4ae4-8bfe-df3ba4531eff\" />\r\n        <option name=\"url\" value=\"https://github.com/soongu/java_basic202303.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/io/InputStream.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/String.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/System.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/ArrayList.java\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2NZkIPY8uOBwgkFt8gcd1CTeHZq\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/java_study_04-master&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.색 구성표 글꼴&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"day05.member\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"애플리케이션.day07.lotto.Main\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.quiz.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.quiz.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Quiz01\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.quiz.Quiz01\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.quiz.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"day07.inherit.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.inherit.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.inherit.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"day07.lotto.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.lotto.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.lotto.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"day07.static_.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.static_.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.static_.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"애플리케이션.day07.lotto.Main\" />\r\n        <item itemvalue=\"애플리케이션.day07.static_.Main\" />\r\n        <item itemvalue=\"애플리케이션.Quiz01\" />\r\n        <item itemvalue=\"애플리케이션.Main\" />\r\n        <item itemvalue=\"애플리케이션.day07.inherit.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6b872ce2-4d43-4fe9-85e6-f1310087279c\" name=\"Changes\" comment=\"\" />\r\n      <created>1679878913035</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1679878913035</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"initial commit\">\r\n      <created>1679881104219</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679881104219</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"타입 캐스팅\">\r\n      <created>1679888588929</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679888588929</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"배열기초, push, pop, copy 알고리즘\">\r\n      <created>1679974728999</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679974728999</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"# 배열 수정, 삭제, 삽입 알고리즘&#10;# 메서드\">\r\n      <created>1680069534185</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680069534185</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"# 객체지향 기초, 생성자, 필드\">\r\n      <created>1680140872106</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680140872106</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"# 패키지, 스트링배열리스트\">\r\n      <created>1680147684993</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680147684993</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"# 스트링배열리스트\">\r\n      <created>1680151938788</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680151938788</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"# 스트링배열리스트\">\r\n      <created>1680151998269</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680151998269</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"# this, 멤버관리 앱\">\r\n      <created>1680229026897</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680229026897</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"# 멤버관리 앱, 조회 기능 완성\">\r\n      <created>1680234199115</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680234199115</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"# 멤버관리 앱 비밀번호 수정기능\">\r\n      <created>1680500426276</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680500426276</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"# 멤버관리 앱 비밀번호 삭제기능\">\r\n      <created>1680503445396</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680503445396</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"# 접근제한자, 캡슐화\">\r\n      <created>1680508913890</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680508913890</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"# 상속, 오버라이딩, static\">\r\n      <created>1680595342446</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680595342446</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"15\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"initial commit\" />\r\n    <MESSAGE value=\"타입 캐스팅\" />\r\n    <MESSAGE value=\"배열기초, push, pop, copy 알고리즘\" />\r\n    <MESSAGE value=\"# 배열 수정, 삭제, 삽입 알고리즘&#10;# 메서드\" />\r\n    <MESSAGE value=\"# 객체지향 기초, 생성자, 필드\" />\r\n    <MESSAGE value=\"# 패키지, 스트링배열리스트\" />\r\n    <MESSAGE value=\"# 스트링배열리스트\" />\r\n    <MESSAGE value=\"# this, 멤버관리 앱\" />\r\n    <MESSAGE value=\"# 멤버관리 앱, 조회 기능 완성\" />\r\n    <MESSAGE value=\"# 멤버관리 앱 비밀번호 수정기능\" />\r\n    <MESSAGE value=\"# 멤버관리 앱 비밀번호 삭제기능\" />\r\n    <MESSAGE value=\"# 접근제한자, 캡슐화\" />\r\n    <MESSAGE value=\"# 상속, 오버라이딩, static\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"# 상속, 오버라이딩, static\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/day03/MethodQuiz.java</url>\r\n          <line>101</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 0cf8ef716a207b6e3d1d706e2916a74526604317)
+-+++ b/.idea/workspace.xml	(date 1680661303261)
+-@@ -4,9 +4,11 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="# 상속, 오버라이딩, static">
+-+    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0404 5교시 로또번호 다시 풀어보기">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Lotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Lotto.java" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Main.java" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/src/day07/util/LottoSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -22,6 +24,11 @@
+-     </option>
+-   </component>
+-   <component name="Git.Settings">
+-+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-+      <map>
+-+        <entry key="$PROJECT_DIR$" value="master" />
+-+      </map>
+-+    </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-   </component>
+-   <component name="GitHubPullRequestSearchHistory">{
+-@@ -29,14 +36,11 @@
+-     &quot;state&quot;: &quot;OPEN&quot;
+-   }
+- }</component>
+--  <component name="GitToolBoxStore">
+--    <option name="projectConfigVersion" value="5" />
+--  </component>
+-   <component name="GithubPullRequestsUISettings">
+-     <option name="selectedUrlAndAccountId">
+-       <UrlAndAccount>
+--        <option name="accountId" value="c9ff8cd0-0798-4ae4-8bfe-df3ba4531eff" />
+--        <option name="url" value="https://github.com/soongu/java_basic202303.git" />
+-+        <option name="accountId" value="e5037bf5-ecdf-4e4a-9ab3-2bc0cc4619fd" />
+-+        <option name="url" value="https://github.com/Hazel0c0/java_basic202303.git" />
+-       </UrlAndAccount>
+-     </option>
+-   </component>
+-@@ -49,24 +53,32 @@
+-   <component name="MarkdownSettingsMigration">
+-     <option name="stateVersion" value="1" />
+-   </component>
+--  <component name="ProjectId" id="2NZkIPY8uOBwgkFt8gcd1CTeHZq" />
+-+  <component name="ProjectId" id="2NZkIEUMREHFNJZC5zRF7HRA3vE" />
+-   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+-     <ConfirmationsSetting value="1" id="Add" />
+-   </component>
+-   <component name="ProjectViewState">
+-+    <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+-   <component name="PropertiesComponent">{
+-   &quot;keyToString&quot;: {
+-     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+--    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/java_study_04-master&quot;,
+--    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.색 구성표 글꼴&quot;
+-+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+-+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;
+-   }
+- }</component>
+-   <component name="RecentsManager">
+-     <key name="CreateClassDialog.RecentsKey">
+-       <recent name="day05.member" />
+-+    </key>
+-+    <key name="CopyClassDialog.RECENTS_KEY">
+-+      <recent name="day07.inherit" />
+-+      <recent name="day03" />
+-+      <recent name="day02" />
+-     </key>
+-   </component>
+-   <component name="RunManager" selected="애플리케이션.day07.lotto.Main">
+-@@ -137,10 +149,10 @@
+-     </configuration>
+-     <recent_temporary>
+-       <list>
+--        <item itemvalue="애플리케이션.day07.lotto.Main" />
+--        <item itemvalue="애플리케이션.day07.static_.Main" />
+-         <item itemvalue="애플리케이션.Quiz01" />
+-         <item itemvalue="애플리케이션.Main" />
+-+        <item itemvalue="애플리케이션.day07.static_.Main" />
+-+        <item itemvalue="애플리케이션.day07.lotto.Main" />
+-         <item itemvalue="애플리케이션.day07.inherit.Main" />
+-       </list>
+-     </recent_temporary>
+-@@ -148,109 +160,108 @@
+-   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-   <component name="TaskManager">
+-     <task active="true" id="Default" summary="Default task">
+--      <changelist id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="" />
+--      <created>1679878913035</created>
+-+      <created>1679878911194</created>
+-       <option name="number" value="Default" />
+-       <option name="presentableId" value="Default" />
+--      <updated>1679878913035</updated>
+-+      <updated>1679878911194</updated>
+-     </task>
+--    <task id="LOCAL-00001" summary="initial commit">
+--      <created>1679881104219</created>
+-+    <task id="LOCAL-00001" summary="Changes">
+-+      <created>1679880968053</created>
+-       <option name="number" value="00001" />
+-       <option name="presentableId" value="LOCAL-00001" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1679881104219</updated>
+-+      <updated>1679880968053</updated>
+-     </task>
+--    <task id="LOCAL-00002" summary="타입 캐스팅">
+--      <created>1679888588929</created>
+-+    <task id="LOCAL-00002" summary="Changes">
+-+      <created>1679880976514</created>
+-       <option name="number" value="00002" />
+-       <option name="presentableId" value="LOCAL-00002" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1679888588929</updated>
+-+      <updated>1679880976514</updated>
+-     </task>
+--    <task id="LOCAL-00003" summary="배열기초, push, pop, copy 알고리즘">
+--      <created>1679974728999</created>
+-+    <task id="LOCAL-00003" summary="Changes">
+-+      <created>1679881455594</created>
+-       <option name="number" value="00003" />
+-       <option name="presentableId" value="LOCAL-00003" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1679974728999</updated>
+-+      <updated>1679881455594</updated>
+-     </task>
+--    <task id="LOCAL-00004" summary="# 배열 수정, 삭제, 삽입 알고리즘&#10;# 메서드">
+--      <created>1680069534185</created>
+-+    <task id="LOCAL-00004" summary="배열 push, pop 공부하기">
+-+      <created>1679974870980</created>
+-       <option name="number" value="00004" />
+-       <option name="presentableId" value="LOCAL-00004" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680069534185</updated>
+-+      <updated>1679974870980</updated>
+-     </task>
+--    <task id="LOCAL-00005" summary="# 객체지향 기초, 생성자, 필드">
+--      <created>1680140872106</created>
+-+    <task id="LOCAL-00005" summary="배열 push, pop 공부하기">
+-+      <created>1679979452772</created>
+-       <option name="number" value="00005" />
+-       <option name="presentableId" value="LOCAL-00005" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680140872106</updated>
+-+      <updated>1679979452772</updated>
+-     </task>
+--    <task id="LOCAL-00006" summary="# 패키지, 스트링배열리스트">
+--      <created>1680147684993</created>
+-+    <task id="LOCAL-00006" summary="메소드 베이직 파일 _ ... 공부">
+-+      <created>1680061154402</created>
+-       <option name="number" value="00006" />
+-       <option name="presentableId" value="LOCAL-00006" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680147684993</updated>
+-+      <updated>1680061154402</updated>
+-     </task>
+--    <task id="LOCAL-00007" summary="# 스트링배열리스트">
+--      <created>1680151938788</created>
+-+    <task id="LOCAL-00007" summary="0329 수업 종료">
+-+      <created>1680085148309</created>
+-       <option name="number" value="00007" />
+-       <option name="presentableId" value="LOCAL-00007" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680151938788</updated>
+-+      <updated>1680085148309</updated>
+-     </task>
+--    <task id="LOCAL-00008" summary="# 스트링배열리스트">
+--      <created>1680151998269</created>
+-+    <task id="LOCAL-00008" summary="enum 다시보기">
+-+      <created>1680139505614</created>
+-       <option name="number" value="00008" />
+-       <option name="presentableId" value="LOCAL-00008" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680151998269</updated>
+-+      <updated>1680139505614</updated>
+-     </task>
+--    <task id="LOCAL-00009" summary="# this, 멤버관리 앱">
+--      <created>1680229026897</created>
+-+    <task id="LOCAL-00009" summary="오전 수업 끝">
+-+      <created>1680148192966</created>
+-       <option name="number" value="00009" />
+-       <option name="presentableId" value="LOCAL-00009" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680229026897</updated>
+-+      <updated>1680148192966</updated>
+-     </task>
+--    <task id="LOCAL-00010" summary="# 멤버관리 앱, 조회 기능 완성">
+--      <created>1680234199115</created>
+-+    <task id="LOCAL-00010" summary="오전 수업 끝 0331">
+-+      <created>1680240847183</created>
+-       <option name="number" value="00010" />
+-       <option name="presentableId" value="LOCAL-00010" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680234199115</updated>
+-+      <updated>1680240847183</updated>
+-     </task>
+--    <task id="LOCAL-00011" summary="# 멤버관리 앱 비밀번호 수정기능">
+--      <created>1680500426276</created>
+-+    <task id="LOCAL-00011" summary="0403 회원이 없을 때 5번 메뉴 비활성화 시키기">
+-+      <created>1680503443230</created>
+-       <option name="number" value="00011" />
+-       <option name="presentableId" value="LOCAL-00011" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680500426276</updated>
+-+      <updated>1680503443230</updated>
+-     </task>
+--    <task id="LOCAL-00012" summary="# 멤버관리 앱 비밀번호 삭제기능">
+--      <created>1680503445396</created>
+-+    <task id="LOCAL-00012" summary="0403 수업 끝">
+-+      <created>1680511860972</created>
+-       <option name="number" value="00012" />
+-       <option name="presentableId" value="LOCAL-00012" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680503445396</updated>
+-+      <updated>1680511860972</updated>
+-     </task>
+--    <task id="LOCAL-00013" summary="# 접근제한자, 캡슐화">
+--      <created>1680508913890</created>
+-+    <task id="LOCAL-00013" summary="0404 5교시 스태틱 - 스캐너 부분 공부하기">
+-+      <created>1680589038690</created>
+-       <option name="number" value="00013" />
+-       <option name="presentableId" value="LOCAL-00013" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680508913890</updated>
+-+      <updated>1680589038690</updated>
+-     </task>
+--    <task id="LOCAL-00014" summary="# 상속, 오버라이딩, static">
+--      <created>1680595342446</created>
+-+    <task id="LOCAL-00014" summary="0404 5교시 로또번호 다시 풀어보기">
+-+      <created>1680595583409</created>
+-       <option name="number" value="00014" />
+-       <option name="presentableId" value="LOCAL-00014" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1680595342446</updated>
+-+      <updated>1680595583409</updated>
+-     </task>
+-     <option name="localTasksCounter" value="15" />
+-     <servers />
+-@@ -267,28 +278,34 @@
+-     </option>
+-   </component>
+-   <component name="VcsManagerConfiguration">
+--    <MESSAGE value="initial commit" />
+--    <MESSAGE value="타입 캐스팅" />
+--    <MESSAGE value="배열기초, push, pop, copy 알고리즘" />
+--    <MESSAGE value="# 배열 수정, 삭제, 삽입 알고리즘&#10;# 메서드" />
+--    <MESSAGE value="# 객체지향 기초, 생성자, 필드" />
+--    <MESSAGE value="# 패키지, 스트링배열리스트" />
+--    <MESSAGE value="# 스트링배열리스트" />
+--    <MESSAGE value="# this, 멤버관리 앱" />
+--    <MESSAGE value="# 멤버관리 앱, 조회 기능 완성" />
+--    <MESSAGE value="# 멤버관리 앱 비밀번호 수정기능" />
+--    <MESSAGE value="# 멤버관리 앱 비밀번호 삭제기능" />
+--    <MESSAGE value="# 접근제한자, 캡슐화" />
+--    <MESSAGE value="# 상속, 오버라이딩, static" />
+--    <option name="LAST_COMMIT_MESSAGE" value="# 상속, 오버라이딩, static" />
+-+    <MESSAGE value="Changes" />
+-+    <MESSAGE value="배열 push, pop 공부하기" />
+-+    <MESSAGE value="어레이 퀴즈 공부하기" />
+-+    <MESSAGE value="메소드 베이직 파일 _ ... 공부" />
+-+    <MESSAGE value="문제 마저 풀기" />
+-+    <MESSAGE value="0329 수업 종료" />
+-+    <MESSAGE value="enum 다시보기" />
+-+    <MESSAGE value="오전 수업 끝" />
+-+    <MESSAGE value="오전 수업 끝 ( String List 마저 만들기)" />
+-+    <MESSAGE value="오전 수업 끝 0331" />
+-+    <MESSAGE value="0403 회원이 없을 때 5번 메뉴 비활성화 시키기" />
+-+    <MESSAGE value="0403 수업 끝" />
+-+    <MESSAGE value="0404 5교시 스태틱 - 스캐너 부분 공부하기" />
+-+    <MESSAGE value="0404 5교시 로또번호 다시 풀어보기" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="0404 5교시 로또번호 다시 풀어보기" />
+-   </component>
+-   <component name="XDebuggerManager">
+-     <breakpoint-manager>
+-       <breakpoints>
+-         <line-breakpoint enabled="true" type="java-line">
+--          <url>file://$PROJECT_DIR$/src/day03/MethodQuiz.java</url>
+--          <line>101</line>
+-+          <url>file://$PROJECT_DIR$/src/day02/ArrayPush2.java</url>
+-+          <line>18</line>
+-           <option name="timeStamp" value="1" />
+-+        </line-breakpoint>
+-+        <line-breakpoint enabled="true" type="java-line">
+-+          <url>file://$PROJECT_DIR$/src/day02/ArrayQuizFood_T.java</url>
+-+          <line>11</line>
+-+          <option name="timeStamp" value="2" />
+-         </line-breakpoint>
+-       </breakpoints>
+-     </breakpoint-manager>
+Index: .idea/shelf/2023-04-05_오전_11_21,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/2023-04-05_오전_11_21,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch b/.idea/shelf/2023-04-05_오전_11_21,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/2023-04-05_오전_11_21,_체크아웃_전에_커밋되지_않은_변경_내용_[Changes]/shelved.patch	
++++ /dev/null	
+@@ -1,34 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6b872ce2-4d43-4fe9-85e6-f1310087279c\" name=\"Changes\" comment=\"0404 5교시 로또번호 다시 풀어보기\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/day07/lotto/Lotto.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/day07/lotto/Lotto.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/day07/lotto/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/day07/lotto/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/day07/util/LottoSimulator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"e5037bf5-ecdf-4e4a-9ab3-2bc0cc4619fd\" />\r\n        <option name=\"url\" value=\"https://github.com/Hazel0c0/java_basic202303.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/io/InputStream.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/String.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/lang/System.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/ArrayList.java\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2NZkIEUMREHFNJZC5zRF7HRA3vE\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"day05.member\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"day07.inherit\" />\r\n      <recent name=\"day03\" />\r\n      <recent name=\"day02\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"애플리케이션.Main\">\r\n    <configuration name=\"GisaFirst\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.qulz.GisaFirst\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.qulz.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.lotto.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.lotto.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Utility\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.util.Utility\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.lotto.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"day07.inherit.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.inherit.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.inherit.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"day07.protec.pac1.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"day07.protec.pac1.Main\" />\r\n      <module name=\"java_basic\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"day07.protec.pac1.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"애플리케이션.Main\" />\r\n        <item itemvalue=\"애플리케이션.Utility\" />\r\n        <item itemvalue=\"애플리케이션.day07.protec.pac1.Main\" />\r\n        <item itemvalue=\"애플리케이션.GisaFirst\" />\r\n        <item itemvalue=\"애플리케이션.day07.inherit.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <created>1679878911194</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1679878911194</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Changes\">\r\n      <created>1679880968053</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679880968053</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Changes\">\r\n      <created>1679880976514</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679880976514</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Changes\">\r\n      <created>1679881455594</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679881455594</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"배열 push, pop 공부하기\">\r\n      <created>1679974870980</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679974870980</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"배열 push, pop 공부하기\">\r\n      <created>1679979452772</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679979452772</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"메소드 베이직 파일 _ ... 공부\">\r\n      <created>1680061154402</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680061154402</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"0329 수업 종료\">\r\n      <created>1680085148309</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680085148309</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"enum 다시보기\">\r\n      <created>1680139505614</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680139505614</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"오전 수업 끝\">\r\n      <created>1680148192966</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680148192966</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"오전 수업 끝 0331\">\r\n      <created>1680240847183</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680240847183</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"0403 회원이 없을 때 5번 메뉴 비활성화 시키기\">\r\n      <created>1680503443230</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680503443230</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"0403 수업 끝\">\r\n      <created>1680511860972</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680511860972</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"0404 5교시 스태틱 - 스캐너 부분 공부하기\">\r\n      <created>1680589038690</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680589038690</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"0404 5교시 로또번호 다시 풀어보기\">\r\n      <created>1680595583409</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680595583409</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"15\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Changes\" />\r\n    <MESSAGE value=\"배열 push, pop 공부하기\" />\r\n    <MESSAGE value=\"어레이 퀴즈 공부하기\" />\r\n    <MESSAGE value=\"메소드 베이직 파일 _ ... 공부\" />\r\n    <MESSAGE value=\"문제 마저 풀기\" />\r\n    <MESSAGE value=\"0329 수업 종료\" />\r\n    <MESSAGE value=\"enum 다시보기\" />\r\n    <MESSAGE value=\"오전 수업 끝\" />\r\n    <MESSAGE value=\"오전 수업 끝 ( String List 마저 만들기)\" />\r\n    <MESSAGE value=\"오전 수업 끝 0331\" />\r\n    <MESSAGE value=\"0403 회원이 없을 때 5번 메뉴 비활성화 시키기\" />\r\n    <MESSAGE value=\"0403 수업 끝\" />\r\n    <MESSAGE value=\"0404 5교시 스태틱 - 스캐너 부분 공부하기\" />\r\n    <MESSAGE value=\"0404 5교시 로또번호 다시 풀어보기\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"0404 5교시 로또번호 다시 풀어보기\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/day02/ArrayPush2.java</url>\r\n          <line>18</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/day02/ArrayQuizFood_T.java</url>\r\n          <line>11</line>\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision bd63b01890a10d02f07703cb51889590bd1bd70a)
+-+++ b/.idea/workspace.xml	(date 1680661205465)
+-@@ -4,11 +4,8 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0404 5교시 로또번호 다시 풀어보기">
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Lotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Lotto.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/day07/lotto/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/Main.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/day07/util/LottoSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/lotto/LottoSimulator.java" afterDir="false" />
+-+    <list default="true" id="6b872ce2-4d43-4fe9-85e6-f1310087279c" name="Changes" comment="0405 day07 inherit 가져옴">
+-+      <change beforePath="$PROJECT_DIR$/src/day07/inherit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day07/inherit/Main.java" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -292,7 +289,8 @@
+-     <MESSAGE value="0403 수업 끝" />
+-     <MESSAGE value="0404 5교시 스태틱 - 스캐너 부분 공부하기" />
+-     <MESSAGE value="0404 5교시 로또번호 다시 풀어보기" />
+--    <option name="LAST_COMMIT_MESSAGE" value="0404 5교시 로또번호 다시 풀어보기" />
+-+    <MESSAGE value="0405 day07 inherit 가져옴" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="0405 day07 inherit 가져옴" />
+-   </component>
+-   <component name="XDebuggerManager">
+-     <breakpoint-manager>
